@@ -55,17 +55,22 @@ describe('App', () => {
     });
 
     describe('constructor', () => {
-        it('does NOT register an uncaughtException handler', () => {
-            const listenerCount = process.listenerCount('uncaughtException');
+        it('registers uncaughtException and unhandledRejection handlers, cleans up on restore', () => {
+            const uncaughtBefore = process.listenerCount('uncaughtException');
+            const rejectionBefore = process.listenerCount('unhandledRejection');
+
             const root = createMockRootWidget();
-            const _app = new App(root, { forceFallback: true });
+            const app = new App(root, { forceFallback: true });
 
-            // The Terminal constructor registers handlers but NOT uncaughtException
-            const newCount = process.listenerCount('uncaughtException');
-            expect(newCount).toBe(listenerCount);
+            // Terminal constructor now registers handlers for both events
+            expect(process.listenerCount('uncaughtException')).toBe(uncaughtBefore + 1);
+            expect(process.listenerCount('unhandledRejection')).toBe(rejectionBefore + 1);
 
-            // Clean up — restore removes our handlers
-            _app.exit(0);
+            // Clean up — explicitly restore to remove handlers
+            app.terminal.restore();
+
+            expect(process.listenerCount('uncaughtException')).toBe(uncaughtBefore);
+            expect(process.listenerCount('unhandledRejection')).toBe(rejectionBefore);
         });
 
         it('registers and cleans up SIGINT/SIGTERM handlers on restore', () => {

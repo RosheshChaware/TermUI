@@ -41,6 +41,8 @@ export class Terminal {
     private _exitHandler: (() => void) | null = null;
     private _sigintHandler: (() => void) | null = null;
     private _sigtermHandler: (() => void) | null = null;
+    private _uncaughtExceptionHandler: ((err: Error) => void) | null = null;
+    private _unhandledRejectionHandler: (() => void) | null = null;
     private _restored = false;
 
     constructor(options: TerminalOptions = {}) {
@@ -161,6 +163,14 @@ export class Terminal {
         if (this._exitHandler) process.off('exit', this._exitHandler);
         if (this._sigintHandler) process.off('SIGINT', this._sigintHandler);
         if (this._sigtermHandler) process.off('SIGTERM', this._sigtermHandler);
+        if (this._uncaughtExceptionHandler) {
+            process.off('uncaughtException', this._uncaughtExceptionHandler);
+            this._uncaughtExceptionHandler = null;
+        }
+        if (this._unhandledRejectionHandler) {
+            process.off('unhandledRejection', this._unhandledRejectionHandler);
+            this._unhandledRejectionHandler = null;
+        }
 
         // Remove resize listener
         if (this._resizeHandler) {
@@ -196,6 +206,18 @@ export class Terminal {
         process.on('exit', this._exitHandler);
         process.on('SIGINT', this._sigintHandler);
         process.on('SIGTERM', this._sigtermHandler);
-        // NOTE: No uncaughtException handler — let errors propagate naturally
+
+        this._uncaughtExceptionHandler = (err: Error) => {
+            this.restore();
+            // Remove handler to prevent recursion, then re-throw
+            process.off('uncaughtException', this._uncaughtExceptionHandler!);
+            throw err;
+        };
+        this._unhandledRejectionHandler = () => {
+            this.restore();
+            process.exit(1);
+        };
+        process.once('uncaughtException', this._uncaughtExceptionHandler);
+        process.once('unhandledRejection', this._unhandledRejectionHandler);
     }
 }
