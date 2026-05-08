@@ -18,8 +18,15 @@ export type { ThemeVariables, ResolvedRule } from './engine.js';
 export { BUILTIN_THEMES, getBuiltinThemeNames, getBuiltinTheme, getAllBuiltinThemes } from './themes.js';
 
 // Design Tokens
-export { systemTheme, defaultDark, defaultLight } from './tokens.js';
+export { systemTheme, defaultDark, defaultLight, detectDark } from './tokens.js';
 export type { ThemeTokens } from './tokens.js';
+
+// Named ThemeTokens
+export {
+  draculaTheme, nordTheme, catppuccinTheme, monokaiTheme,
+  solarizedTheme, tokyoNightTheme, oneDarkTheme,
+  NAMED_THEMES, getNamedTheme,
+} from './named-themes.js';
 
 // Hot-Reload Watcher
 export { TSSWatcher } from './watcher.js';

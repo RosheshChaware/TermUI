@@ -23,7 +23,7 @@ export interface ThemeTokens {
  * - TERM_BACKGROUND: "light" or "dark" (set by some terminals like iTerm2)
  * Defaults to dark if no detection available.
  */
-function detectDark(): boolean {
+export function detectDark(): boolean {
   const colorfgbg = process.env.COLORFGBG;
   if (colorfgbg) {
     const parts = colorfgbg.split(';');
