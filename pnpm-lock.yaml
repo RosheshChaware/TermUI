@@ -124,6 +124,9 @@ importers:
       '@termuijs/tss':
         specifier: workspace:*
         version: link:../../packages/tss
+      '@termuijs/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@termuijs/widgets':
         specifier: workspace:*
         version: link:../../packages/widgets

@@ -1,15 +1,16 @@
 {
-  "name": "@termuijs/example-sprint15-showcase",
+  "name": "@termuijs/example-widget-gallery",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Sprint 1.5 widget showcase — Tree, JSONView, DiffView, CommandPalette, MultiProgress, StreamingText, ChatMessage, ToolCall",
+  "description": "TermUI Widget Gallery — Sprint 1.5 + Sprint 2 widgets, themes, grid, skeleton, notifications",
   "scripts": {
     "start": "npx tsx src/index.ts",
     "build": "echo 'no build needed'"
   },
   "dependencies": {
     "@termuijs/core": "workspace:*",
+    "@termuijs/ui": "workspace:*",
     "@termuijs/widgets": "workspace:*",
     "@termuijs/tss": "workspace:*",
     "@termuijs/motion": "workspace:*"
