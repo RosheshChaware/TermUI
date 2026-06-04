@@ -2,17 +2,50 @@ import { Database } from 'bun:sqlite';
 import { App, type KeyEvent } from '@termuijs/core';
 import { Box, Text, Widget, Tree, Table, ScrollView, type TreeNode } from '@termuijs/widgets';
 
+
+type TableNodeData = {
+    type: 'table';
+    name: string;
+};
+
+type ColumnNodeData = {
+    type: 'column';
+    name: string;
+    table: string;
+};
+
+type RootNodeData = {
+    type: 'root';
+};
+
+type NodeData = TableNodeData | ColumnNodeData | RootNodeData;
+
+function quoteSqliteIdentifier(name: string): string {
+    return `"${name.replace(/"/g, '""')}"`;
+}
+
+
+
+function isTableNode(data: unknown): data is TableNodeData {
+    return (
+        typeof data === 'object' &&
+        data !== null &&
+        'type' in data &&
+        data.type === 'table'
+    );
+}
+
 // ── Tree builder ────────────────────────────────────────
 
 function buildDbTree(db: Database): TreeNode[] {
     const tableNodes: TreeNode[] = [];
     const tables = db.query<{ name: string }, []>(
-        "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
+        "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name"
     ).all();
 
     for (const table of tables) {
         const colInfos = db.query<{ name: string }, []>(
-            `PRAGMA table_info("${table.name}")`
+            `PRAGMA table_info(${quoteSqliteIdentifier(table.name)})`
         ).all();
         const children: TreeNode[] = colInfos.map(col => ({
             label: col.name,
@@ -46,16 +79,16 @@ function buildDbTree(db: Database): TreeNode[] {
 //
 function coreKeyToTreeKey(key: string): string {
     switch (key) {
-        case 'up':    return 'ArrowUp';
-        case 'down':  return 'ArrowDown';
-        case 'left':  return 'ArrowLeft';
+        case 'up': return 'ArrowUp';
+        case 'down': return 'ArrowDown';
+        case 'left': return 'ArrowLeft';
         case 'right': return 'ArrowRight';
         case 'enter':
         case 'return': return 'Enter';
         case 'space': return ' ';
-        case 'home':  return 'Home';
-        case 'end':   return 'End';
-        default:      return key;
+        case 'home': return 'Home';
+        case 'end': return 'End';
+        default: return key;
     }
 }
 
@@ -147,13 +180,9 @@ export class DbBrowserApp extends Widget {
         // The tree starts with cursor on the root "Database" node (index 0).
         // Move down one row so the first table is highlighted, then load it.
         const firstTableNode = treeNodes[0]?.children?.[0];
-        if (
-            firstTableNode?.data &&
-            (firstTableNode.data as { type: string }).type === 'table'
-        ) {
-            const firstTableName = (firstTableNode.data as { name: string }).name;
-            // Use the public API — never call handleKey('...') here because
-            // the widget has no rect yet (layout hasn't run).
+
+        if (firstTableNode?.data && isTableNode(firstTableNode.data)) {
+            const firstTableName = firstTableNode.data.name;
             this._tree.moveNext();
             this._loadTable(firstTableName);
         }
@@ -165,12 +194,12 @@ export class DbBrowserApp extends Widget {
 
     private _loadTable(tableName: string): void {
         const colInfos = this._db.query<{ name: string }, []>(
-            `PRAGMA table_info("${tableName}")`
+            `PRAGMA table_info(${quoteSqliteIdentifier(tableName)})`
         ).all();
         const columns = colInfos.map(col => ({ header: col.name, key: col.name }));
 
         const rows = this._db.query<Record<string, string | number>, []>(
-            `SELECT * FROM "${tableName}"`
+            `SELECT * FROM ${quoteSqliteIdentifier(tableName)}`
         ).all();
 
         this._currentTable = tableName;
@@ -215,13 +244,14 @@ export class DbBrowserApp extends Widget {
         const selected = this._tree.selectedNode;
         if (!selected?.data) return;
 
-        const data = selected.data as { type: string; name?: string; table?: string };
+        const data = selected.data as NodeData;
+
         let targetTable: string | null = null;
 
-        if (data.type === 'table') {
-            targetTable = data.name ?? null;
+        if (isTableNode(data)) {
+            targetTable = data.name;
         } else if (data.type === 'column') {
-            targetTable = data.table ?? null;
+            targetTable = data.table;
         }
 
         if (targetTable && targetTable !== this._currentTable) {
