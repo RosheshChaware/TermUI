@@ -625,6 +625,8 @@
 
     "@termuijs/example-dashboard": ["@termuijs/example-dashboard@workspace:examples/dashboard"],
 
+    "@termuijs/example-db-browser": ["@termuijs/example-db-browser@workspace:examples/db-browser"],
+
     "@termuijs/example-file-manager": ["@termuijs/example-file-manager@workspace:examples/file-manager"],
 
     "@termuijs/example-forms": ["@termuijs/example-forms@workspace:examples/forms-and-validation"],
