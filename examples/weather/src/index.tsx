@@ -39,26 +39,27 @@ if (initialCityIndex >= 0) {
 
 const getAPI = () => `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_direction_10m,weather_code&timezone=auto`;
 
-let weather: any = null;
+// Inline comment: weather is loosely typed because the API response shape is external
+let weather: Record<string, Record<string, number>> | null = null;
 let lastFetch = 0;
 let lastLatency = 0;
 
 function getTemperatureSeverity(temp: number) {
-  if (temp < 20) return { label: "Cool", emoji: "🟢", color: { type: "named" as const, name: "green" as const } };
-  if (temp <= 30) return { label: "Moderate", emoji: "🟡", color: { type: "named" as const, name: "yellow" as const } };
-  return { label: "Hot", emoji: "🔴", color: { type: "named" as const, name: "red" as const } };
+  if (temp < 20) return { label: "Cool", emoji: "🟢" };
+  if (temp <= 30) return { label: "Moderate", emoji: "🟡" };
+  return { label: "Hot", emoji: "🔴" };
 }
 
 function getHumiditySeverity(humidity: number) {
-  if (humidity < 40) return { label: "Dry", emoji: "🟢", color: { type: "named" as const, name: "green" as const } };
-  if (humidity <= 70) return { label: "Moderate", emoji: "🟡", color: { type: "named" as const, name: "yellow" as const } };
-  return { label: "Humid", emoji: "🔴", color: { type: "named" as const, name: "red" as const } };
+  if (humidity < 40) return { label: "Dry", emoji: "🟢" };
+  if (humidity <= 70) return { label: "Moderate", emoji: "🟡" };
+  return { label: "Humid", emoji: "🔴" };
 }
 
 function getWindSeverity(wind: number) {
-  if (wind < 10) return { label: "Calm", emoji: "🟢", color: { type: "named" as const, name: "green" as const } };
-  if (wind <= 25) return { label: "Breezy", emoji: "🟡", color: { type: "named" as const, name: "yellow" as const } };
-  return { label: "Windy", emoji: "🔴", color: { type: "named" as const, name: "red" as const } };
+  if (wind < 10) return { label: "Calm", emoji: "🟢" };
+  if (wind <= 25) return { label: "Breezy", emoji: "🟡" };
+  return { label: "Windy", emoji: "🔴" };
 }
 
 function getWeatherInsights(temp: number, humidity: number, wind: number): string[] {
@@ -89,9 +90,9 @@ function getWeatherInsights(temp: number, humidity: number, wind: number): strin
 
   // Comfort conditions
   if (
-    tempSev.color.name === "yellow" &&
-    humSev.color.name === "yellow" &&
-    windSev.color.name !== "red"
+    tempSev.label === "Moderate" &&
+    humSev.label === "Moderate" &&
+    windSev.label !== "Windy"
   ) {
     insights.push("Comfortable outdoor conditions.");
   }
@@ -167,14 +168,6 @@ function getWeatherArt(code: number): string[] {
   ];
 }
 
-function getWeatherArtColor(code: number) {
-  if (code >= 95) return { type: "named" as const, name: "red" as const };
-  if (code >= 60) return { type: "named" as const, name: "blue" as const };
-  if (code >= 40) return { type: "named" as const, name: "cyan" as const };
-  if (code >= 20) return { type: "named" as const, name: "white" as const };
-  return { type: "named" as const, name: "yellow" as const };
-}
-
 function compass(direction: number) {
   const points = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
   const index = Math.round(direction / 45) % 8;
@@ -211,67 +204,41 @@ async function fetchWeather() {
 setInterval(fetchWeather, 5000);
 fetchWeather();
 
-// Explicit any with inline comment to access private _color property on Gauge widget dynamically
-let tempGauge: any;
-// Explicit any with inline comment to access private _color property on Gauge widget dynamically
-let humidityGauge: any;
-// Explicit any with inline comment to access private _color property on Gauge widget dynamically
-let windGauge: any;
-
-tempGauge = gauge("Temp", () => {
+// Gauge does not expose a public setColor() method, so dynamic color
+// mutation has been removed entirely. Severity is shown via text labels
+// in the "CURRENT CONDITIONS" section below.
+const tempGauge = gauge("Temp", () => {
   const t = weather?.current?.temperature_2m ?? 0;
-  const sev = getTemperatureSeverity(t);
-  if (tempGauge) {
-    tempGauge._color = sev.color;
-  }
   return Math.min(Math.max((t + 20) / 60, 0), 1);
 }, { color: { type: "named", name: "green" } });
 
-humidityGauge = gauge("Humidity", () => {
+const humidityGauge = gauge("Humidity", () => {
   const h = weather?.current?.relative_humidity_2m ?? 0;
-  const sev = getHumiditySeverity(h);
-  if (humidityGauge) {
-    humidityGauge._color = sev.color;
-  }
   return h / 100;
 }, { color: { type: "named", name: "green" } });
 
-windGauge = gauge("Wind", () => {
+const windGauge = gauge("Wind", () => {
   const w = weather?.current?.wind_speed_10m ?? 0;
-  const sev = getWindSeverity(w);
-  if (windGauge) {
-    windGauge._color = sev.color;
-  }
   return Math.min(w / 100, 1);
 }, { color: { type: "named", name: "green" } });
 
-// Explicit any with inline comment to access private style property on Text widget dynamically
-let artLine1: any;
-// Explicit any with inline comment to access private style property on Text widget dynamically
-let artLine2: any;
-// Explicit any with inline comment to access private style property on Text widget dynamically
-let artLine3: any;
-// Explicit any with inline comment to access private style property on Text widget dynamically
-let artLine4: any;
-
-artLine1 = text(() => {
+// Text does not expose a public style update API, so dynamic color
+// mutation has been removed. Art content still updates reactively
+// based on weather code.
+const artLine1 = text(() => {
   const code = weather?.current?.weather_code ?? 0;
-  if (artLine1) artLine1.style.fg = getWeatherArtColor(code);
   return `  ${getWeatherArt(code)[0]}`;
 });
-artLine2 = text(() => {
+const artLine2 = text(() => {
   const code = weather?.current?.weather_code ?? 0;
-  if (artLine2) artLine2.style.fg = getWeatherArtColor(code);
   return `  ${getWeatherArt(code)[1]}`;
 });
-artLine3 = text(() => {
+const artLine3 = text(() => {
   const code = weather?.current?.weather_code ?? 0;
-  if (artLine3) artLine3.style.fg = getWeatherArtColor(code);
   return `  ${getWeatherArt(code)[2]}`;
 });
-artLine4 = text(() => {
+const artLine4 = text(() => {
   const code = weather?.current?.weather_code ?? 0;
-  if (artLine4) artLine4.style.fg = getWeatherArtColor(code);
   return `  ${getWeatherArt(code)[3]}`;
 });
 
