@@ -33,7 +33,7 @@ const initialStats = countStats(defaultContent);
 const statusLeft = new Text(
     `  ${dot} q quit  ${dot} Ctrl+C exit`,
     {
-        color: { type: 'named', name: 'brightBlack' },
+        fg: { type: 'named', name: 'brightBlack' },
         height: 1,
     },
 );
@@ -41,7 +41,7 @@ const statusLeft = new Text(
 const statusRight = new Text(
     `Ln ${initialStats.lines}  ${dot}  Words ${initialStats.words}  ${dot}  Ch ${initialStats.chars}  `,
     {
-        color: { type: 'named', name: 'brightBlack' },
+        fg: { type: 'named', name: 'brightBlack' },
         height: 1,
     },
     { align: 'right' },
