@@ -130,8 +130,9 @@ export type { DateRange, DateRangePickerOptions } from './DateRangePicker.js';
 export { ColorPicker } from './ColorPicker.js';
 export type { ColorPickerOptions } from './ColorPicker.js';
 
-export { Accordion } from './Accordion.js';
-export type { AccordionOptions, AccordionItem } from './Accordion.js';
+export { Accordion } from '@termuijs/widgets';
+export type { AccordionOptions } from '@termuijs/widgets';
+export type { AccordionSection as AccordionItem } from '@termuijs/widgets';
 
 export { AppShell } from './AppShell.js';
 export type { AppShellOptions } from './AppShell.js';
@@ -147,8 +148,6 @@ export type { SegmentedControlOptions } from './SegmentedControl.js';
 export { SearchableSelect } from './SearchableSelect.js';
 export type { SearchableSelectOption, SearchableSelectOptions } from './SearchableSelect.js';
 export { Autocomplete, type AutocompleteOptions } from './Autocomplete.js';
-export { Toggle } from './Toggle.js';
-export type { ToggleOptions } from './Toggle.js';
 export { Switch } from './Switch.js';
 export type { SwitchOptions } from './Switch.js';
 export { Checkbox } from './Checkbox.js';
@@ -173,8 +172,8 @@ export type { BasicAuthCredentials, BasicAuthPromptOptions } from './BasicAuthPr
 export { TextArea } from './TextArea.js';
 export type { TextAreaOptions } from './TextArea.js';
 
-export { Stepper } from './Stepper.js';
-export type { StepperOptions } from './Stepper.js';
+export { Stepper } from '@termuijs/widgets';
+export type { StepperOptions, StepperStep, StepStatus, StepperOrientation } from '@termuijs/widgets';
 
 export { Announcer, announcer } from './Announcer.js';
 export type { AnnouncerOptions, Politeness } from './Announcer.js';
