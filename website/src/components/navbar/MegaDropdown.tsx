@@ -1,6 +1,8 @@
+'use client'
+
 import { useEffect, useRef } from 'react'
 import type { LucideIcon } from 'lucide-react'
-import { Link } from '@tanstack/react-router'
+import Link from 'next/link'
 
 export interface MegaItem {
   label: string
@@ -66,7 +68,7 @@ export function MegaDropdown({ sections, onClose, onMouseEnter, onMouseLeave }: 
               {section.items.map((item) => (
                 <li key={item.href}>
                   <Link
-                    to={item.href as any}
+                    href={item.href}
                     className="mega-drop-item"
                     role="menuitem"
                     onClick={onClose}

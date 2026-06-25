@@ -1,0 +1,135 @@
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+@source "../../node_modules/fumadocs-ui/dist/**/*.js";
+
+@import "tailwindcss";
+
+/* Ensure Tailwind scans our component source files */
+@source "../components/**/*.tsx";
+@source "../routes/**/*.tsx";
+
+/*
+  Terminal Noir → Tailwind v4 theme mapping.
+  Maps the existing CSS-variable design tokens so Tailwind utilities
+  like `bg-term-surface`, `text-term-primary`, `border-term-border`, etc. work
+  alongside the existing custom CSS.
+*/
+@theme {
+  /* ── Palette ─────────────────────────────────── */
+  --color-term-bg:          var(--bg-primary);
+  --color-term-bg2:         var(--bg-secondary);
+  --color-term-bg3:         var(--bg-tertiary);
+  --color-term-surface:     var(--bg-surface);
+  --color-term-elevated:    var(--bg-elevated);
+
+  --color-term-primary:     var(--text-primary);
+  --color-term-secondary:   var(--text-secondary);
+  --color-term-muted:       var(--text-muted);
+  --color-term-inverse:     var(--text-inverse);
+
+  --color-term-accent:      var(--accent);
+  --color-term-accent-dim:  var(--accent-dim);
+  --color-term-cyan:        var(--cyan);
+  --color-term-cyan-dim:    var(--cyan-dim);
+  --color-term-amber:       var(--amber);
+  --color-term-rose:        var(--rose);
+  --color-term-purple:      var(--purple);
+
+  --color-term-border:      var(--border-subtle);
+  --color-term-border-md:   var(--border-medium);
+  --color-term-border-acc:  var(--border-accent);
+
+  /* ── Typography ──────────────────────────────── */
+  --font-display: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-body:    'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    var(--font-code);
+
+  /* ── Radii ───────────────────────────────────── */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+
+  /* ── Animations ──────────────────────────────── */
+  --animate-navbar-scan:   navbar-scan 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+  --animate-mega-drop:     mega-drop 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-dropdown-pop:  dropdown-pop 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in-up:    fade-in-up 0.2s ease both;
+  --animate-pulse-dot:     pulse-dot 2s ease-in-out infinite;
+  --animate-shimmer:       shimmer 1.5s ease-in-out infinite;
+  --animate-blink:         blink-cursor 1.06s step-end infinite;
+  --animate-aurora-rotate: aurora-rotate 5s linear infinite;
+  --animate-status-pulse:  status-pulse 2.8s ease-in-out infinite;
+  --animate-pill-breathe:  pill-breathe 5s ease-in-out infinite;
+}
+
+/* ── Keyframes ──────────────────────────────────── */
+@keyframes navbar-scan {
+  0%   { width: 0;    opacity: 1; }
+  60%  { width: 100%; opacity: 1; }
+  100% { width: 100%; opacity: 0; }
+}
+
+@keyframes mega-drop {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+@keyframes dropdown-pop {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.6; transform: scale(1.35); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ── Aurora rotating border ──────────────────── */
+@property --aurora-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes aurora-rotate {
+  to { --aurora-angle: 360deg; }
+}
+
+/* ── Status indicator pulse ──────────────────── */
+@keyframes status-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%      { transform: scale(1.7); opacity: 0.35; }
+}
+
+/* ── Capsule shadow breathe ──────────────────── */
+@keyframes pill-breathe {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(0, 255, 136, 0.07),
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(0, 255, 136, 0.14),
+      0 8px 40px rgba(0, 0, 0, 0.5),
+      0 0 24px rgba(0, 255, 136, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+}

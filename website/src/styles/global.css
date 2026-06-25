@@ -1,0 +1,634 @@
+/* ─────────────────────────────────────────────────────
+   Global Styles — Terminal Noir
+   ───────────────────────────────────────────────────── */
+
+@import './tokens.css';
+
+/* ── Reset ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Diagonal grid pattern background */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 255, 136, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 136, 0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* CRT scanline overlay — extremely subtle */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ── Typography ────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-tight);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: var(--text-5xl);
+}
+
+h2 {
+    font-size: var(--text-3xl);
+    margin-top: var(--space-12);
+}
+
+h3 {
+    font-size: var(--text-2xl);
+    margin-top: var(--space-8);
+}
+
+h4 {
+    font-size: var(--text-xl);
+    margin-top: var(--space-6);
+}
+
+p {
+    margin-top: var(--space-4);
+    color: var(--text-secondary);
+    max-width: 72ch;
+}
+
+a {
+    color: var(--cyan);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+strong {
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+}
+
+code {
+    font-family: var(--font-code);
+    font-size: 0.9em;
+    background: var(--bg-tertiary);
+    padding: 0.15em 0.4em;
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+}
+
+pre {
+    font-family: var(--font-code);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    overflow-x: auto;
+    margin: var(--space-6) 0;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: var(--text-primary);
+    font-size: inherit;
+}
+
+/* ── Lists ─────────────────────────────────────────── */
+/* Keep document-style list rhythm inside page content so utility-based UI
+   like the navbar, dropdowns, and mobile sheets don't inherit it. */
+main :where(ul, ol) {
+    margin-top: var(--space-4);
+    padding-left: var(--space-6);
+    color: var(--text-secondary);
+}
+
+main :where(li) {
+    margin-top: var(--space-2);
+}
+
+main :where(li)::marker {
+    color: var(--accent-dim);
+}
+
+/* ── Tables ────────────────────────────────────────── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-6) 0;
+    font-size: var(--text-sm);
+}
+
+th {
+    font-family: var(--font-display);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-medium);
+    text-align: left;
+}
+
+td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+}
+
+tr:hover td {
+    background: var(--bg-secondary);
+}
+
+/* ── Horizontal Rule ───────────────────────────────── */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border-subtle);
+    margin: var(--space-12) 0;
+}
+
+/* ── Blockquote ────────────────────────────────────── */
+blockquote {
+    border-left: 3px solid var(--accent);
+    padding: var(--space-4) var(--space-6);
+    margin: var(--space-6) 0;
+    background: var(--accent-glow);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--text-secondary);
+}
+
+/* ── Selection ─────────────────────────────────────── */
+::selection {
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--text-primary);
+}
+
+/* ── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-surface);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-dim);
+}
+
+/* ── Focus ─────────────────────────────────────────── */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ── Layout Utilities ──────────────────────────────── */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* ── Stagger Animation ─────────────────────────────── */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes charReveal {
+    from {
+        opacity: 0;
+        clip-path: inset(100% 0 0 0);
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes phosphorPulse {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 30px rgba(0, 255, 136, 0.3),
+            0 0 60px rgba(0, 255, 136, 0.15);
+    }
+
+    50% {
+        text-shadow:
+            0 0 40px rgba(0, 255, 136, 0.5),
+            0 0 80px rgba(0, 255, 136, 0.25),
+            0 0 120px rgba(0, 255, 136, 0.1);
+    }
+}
+
+@keyframes scanWipe {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes statusBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes terminalLineReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes underlineWave {
+    0% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 200% 100%;
+    }
+}
+
+@keyframes scrollCode {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: var(--shadow-glow-sm);
+    }
+
+    50% {
+        box-shadow: var(--shadow-glow);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Tooltip slide-in for bento TypeScript card */
+@keyframes tooltipAppear {
+    from {
+        opacity: 0;
+        transform: translateY(6px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Vertical marquee for component name list */
+@keyframes marqueeUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+/* Color swatch pop-in */
+@keyframes swatchPop {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Navbar boot scan — sweeps right then fades */
+@keyframes navbarScan {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+
+    80% {
+        width: 100%;
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+/* Boot sequence progress bar fill */
+@keyframes bootProgress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Spring dot travels along SVG offset-path */
+@keyframes springTravel {
+    0% {
+        offset-distance: 0%;
+    }
+
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+/* Animated gradient shift — for "magic" gradient fill text */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Terminal scanline sweep — light bar travels top to bottom on mount */
+@keyframes terminalScanLine {
+    0% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(500px);
+        opacity: 0;
+    }
+}
+
+/* Compiling dots animation — matches image #7 spacing */
+@keyframes compilingDots {
+    0% {
+        content: '▸  Compiling .  ';
+    }
+
+    33% {
+        content: '▸  Compiling .. ';
+    }
+
+    66% {
+        content: '▸  Compiling ...';
+    }
+
+    100% {
+        content: '▸  Compiling ...';
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+}
+
+.stagger-1 {
+    animation-delay: 0.1s;
+}
+
+.stagger-2 {
+    animation-delay: 0.2s;
+}
+
+.stagger-3 {
+    animation-delay: 0.3s;
+}
+
+.stagger-4 {
+    animation-delay: 0.4s;
+}
+
+.stagger-5 {
+    animation-delay: 0.5s;
+}
+
+.stagger-6 {
+    animation-delay: 0.6s;
+}
+
+/* ── Scroll Reveal ─────────────────────────────────── */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity var(--duration-reveal) var(--ease-out),
+        transform var(--duration-reveal) var(--ease-out);
+}
+
+.scroll-reveal[data-revealed="true"] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Reduced Motion ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ── Skip-to-Content ───────────────────────────────── */
+.skip-to-content {
+    position: fixed;
+    top: -100px;
+    left: var(--space-4);
+    z-index: 9999;
+    padding: var(--space-2) var(--space-4);
+    background: var(--accent);
+    color: var(--bg-primary);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-to-content:focus {
+    top: var(--space-4);
+    outline: none;
+}
+
+/* ── Responsive Typography ─────────────────────────── */
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 56px;
+    }
+
+    .section {
+        padding: var(--space-12) var(--space-5);
+    }
+}

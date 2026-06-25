@@ -1,5 +1,8 @@
+'use client'
+
 import { useEffect, useState } from 'react'
-import { Link, useRouterState } from '@tanstack/react-router'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
   X, BookOpen, Code2, Layers, Box, Palette,
   Route, Sparkles, TestTube, Database, Zap, Server,
@@ -46,8 +49,7 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
-  const routerState = useRouterState()
-  const currentPath = routerState.location.pathname
+  const currentPath = usePathname()
   const [expandedSection, setExpandedSection] = useState<string | null>(null)
 
   useEffect(() => { onClose() }, [currentPath, onClose])
@@ -127,7 +129,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 <ul className="mobile-nav-sub-list">
                   {GETTING_STARTED_LINKS.map((link) => (
                     <li key={link.href}>
-                      <Link to={link.href as any} className="mobile-nav-link" onClick={onClose}>
+                      <Link href={link.href} className="mobile-nav-link" onClick={onClose}>
                         <link.icon size={14} />
                         <span>{link.label}</span>
                       </Link>
@@ -139,7 +141,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 <ul className="mobile-nav-sub-list">
                   {GUIDES_LINKS.map((link) => (
                     <li key={link.href}>
-                      <Link to={link.href as any} className="mobile-nav-link" onClick={onClose}>
+                      <Link href={link.href} className="mobile-nav-link" onClick={onClose}>
                         <link.icon size={14} />
                         <span>{link.label}</span>
                       </Link>
@@ -169,7 +171,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
               <ul className="mobile-nav-api-grid">
                 {API_LINKS.map((link) => (
                   <li key={link.href}>
-                    <Link to={link.href as any} className="mobile-nav-link" onClick={onClose}>
+                    <Link href={link.href} className="mobile-nav-link" onClick={onClose}>
                       <link.icon size={14} style={link.accent ? { color: link.accent } : undefined} />
                       <span>{link.label}</span>
                     </Link>

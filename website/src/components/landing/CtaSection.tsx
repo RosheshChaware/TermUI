@@ -1,4 +1,6 @@
-import { Link } from '@tanstack/react-router'
+'use client'
+
+import Link from 'next/link'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { useMagnetic } from '../../hooks/useMagnetic'
 
@@ -50,7 +52,7 @@ export function CtaSection() {
                 {/* Action buttons */}
                 <div className="cta-actions">
                     <Link
-                        to={"/docs/getting-started/installation" as any}
+                        href="/docs/getting-started/installation"
                         className="btn btn-primary btn-lg hero-btn-magnetic"
                         onMouseMove={primaryBtn.onMouseMove}
                         onMouseLeave={primaryBtn.onMouseLeave}

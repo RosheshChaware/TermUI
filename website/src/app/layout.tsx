@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
-import { RootProvider } from 'fumadocs-ui/provider/next'
 import { Analytics } from '@vercel/analytics/react'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -102,7 +101,7 @@ const structuredData = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -112,9 +111,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="theme-color" content="#0a0a0f" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
-      <body>
-        <RootProvider search={{ enabled: false }}>
-          <a href="#main-content" className="skip-to-content">Skip to content</a>
+      <body suppressHydrationWarning>
+        <a href="#main-content" className="skip-to-content">Skip to content</a>
           <CustomCursor />
           <Navbar />
           <main id="main-content" style={{ paddingTop: 'var(--navbar-height)' }}>
@@ -122,7 +120,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </main>
           <Footer />
           <Analytics />
-        </RootProvider>
       </body>
     </html>
   )

@@ -1,0 +1,2762 @@
+[
+  {
+    "name": "Breadcrumbs",
+    "slug": "breadcrumbs",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Breadcrumbs — renders a non-interactive path trail of segments with separators and truncation",
+    "tags": [
+      "display",
+      "breadcrumbs"
+    ]
+  },
+  {
+    "name": "PerformanceOverlay",
+    "slug": "performance-overlay",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "PerformanceOverlay component",
+    "tags": [
+      "display",
+      "performance-overlay"
+    ]
+  },
+  {
+    "name": "FPSCounter",
+    "slug": "f-p-s-counter",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "FPSCounter component",
+    "tags": [
+      "display",
+      "f-p-s-counter"
+    ]
+  },
+  {
+    "name": "Tag",
+    "slug": "tag",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Tag — a short inline label with a colored border and no background fill",
+    "tags": [
+      "display",
+      "tag"
+    ]
+  },
+  {
+    "name": "Canvas",
+    "slug": "canvas",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "A raw Canvas widget providing a HTML5-like 2D drawing context for custom rendering",
+    "tags": [
+      "display",
+      "canvas"
+    ]
+  },
+  {
+    "name": "OrderedList",
+    "slug": "ordered-list",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "OrderedList — renders a numbered list with optional nesting",
+    "tags": [
+      "display",
+      "ordered-list"
+    ]
+  },
+  {
+    "name": "DiffView",
+    "slug": "diff-view",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "DiffView — a scrollable unified diff viewer with +/- line coloring",
+    "tags": [
+      "display",
+      "diff-view"
+    ]
+  },
+  {
+    "name": "Highlight",
+    "slug": "highlight",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Highlight component",
+    "tags": [
+      "display",
+      "highlight"
+    ]
+  },
+  {
+    "name": "BigText",
+    "slug": "big-text",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "BigText — renders text as large 5×3 ASCII art banner characters",
+    "tags": [
+      "display",
+      "big-text"
+    ]
+  },
+  {
+    "name": "Digits",
+    "slug": "digits",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Digits — renders a numeric string as large 3-row ASCII art",
+    "tags": [
+      "display",
+      "digits"
+    ]
+  },
+  {
+    "name": "ChatMessage",
+    "slug": "chat-message",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "ChatMessage — displays a single chat message with a colored role badge and word-wrapped content text",
+    "tags": [
+      "display",
+      "chat-message"
+    ]
+  },
+  {
+    "name": "Pty",
+    "slug": "pty",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Pty — Terminal Multiplexer widget",
+    "tags": [
+      "display",
+      "pty"
+    ]
+  },
+  {
+    "name": "UnorderedList",
+    "slug": "unordered-list",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "UnorderedList - renders a bulleted list with optional nested children",
+    "tags": [
+      "display",
+      "unordered-list"
+    ]
+  },
+  {
+    "name": "DirectoryTree",
+    "slug": "directory-tree",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "DirectoryTree component",
+    "tags": [
+      "display",
+      "directory-tree"
+    ]
+  },
+  {
+    "name": "Text",
+    "slug": "text",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Text — renders a string of text with word-wrapping, alignment, and scrolling",
+    "tags": [
+      "display",
+      "text"
+    ]
+  },
+  {
+    "name": "Markdown",
+    "slug": "markdown",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Markdown component",
+    "tags": [
+      "display",
+      "markdown"
+    ]
+  },
+  {
+    "name": "Accordion",
+    "slug": "accordion",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Accordion — a group of collapsible sections",
+    "tags": [
+      "display",
+      "accordion"
+    ]
+  },
+  {
+    "name": "JSONView",
+    "slug": "j-s-o-n-view",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "JSONView — a syntax-colored, collapsible JSON viewer",
+    "tags": [
+      "display",
+      "j-s-o-n-view"
+    ]
+  },
+  {
+    "name": "jsonToTree",
+    "slug": "json-to-tree",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Convert any JSON-compatible value to a TreeNode, optionally prefixed by `key` (the property name or array index in the parent container)",
+    "tags": [
+      "display",
+      "json-to-tree"
+    ]
+  },
+  {
+    "name": "Rule",
+    "slug": "rule",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Rule — a horizontal or vertical divider line with an optional centered title",
+    "tags": [
+      "display",
+      "rule"
+    ]
+  },
+  {
+    "name": "LogView",
+    "slug": "log-view",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "LogView — scrollable, highlighted log output",
+    "tags": [
+      "display",
+      "log-view"
+    ]
+  },
+  {
+    "name": "Carousel",
+    "slug": "carousel",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Carousel component",
+    "tags": [
+      "display",
+      "carousel"
+    ]
+  },
+  {
+    "name": "Stopwatch",
+    "slug": "stopwatch",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Stopwatch — counts up from zero, displaying elapsed time",
+    "tags": [
+      "display",
+      "stopwatch"
+    ]
+  },
+  {
+    "name": "ShortcutBar",
+    "slug": "shortcut-bar",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "ShortcutBar — a horizontal footer bar that displays quick key bindings",
+    "tags": [
+      "display",
+      "shortcut-bar"
+    ]
+  },
+  {
+    "name": "Avatar",
+    "slug": "avatar",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Avatar — a widget that displays user initials with a generated color",
+    "tags": [
+      "display",
+      "avatar"
+    ]
+  },
+  {
+    "name": "QRCodePattern",
+    "slug": "q-r-code-pattern",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "QRCodePattern component",
+    "tags": [
+      "display",
+      "q-r-code-pattern"
+    ]
+  },
+  {
+    "name": "QRCode",
+    "slug": "q-r-code",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "QRCode component",
+    "tags": [
+      "display",
+      "q-r-code"
+    ]
+  },
+  {
+    "name": "Badge",
+    "slug": "badge",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Badge — a short inline label with a colored background",
+    "tags": [
+      "display",
+      "badge"
+    ]
+  },
+  {
+    "name": "Tooltip",
+    "slug": "tooltip",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Tooltip — displays contextual help text",
+    "tags": [
+      "display",
+      "tooltip"
+    ]
+  },
+  {
+    "name": "Code",
+    "slug": "code",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Code component",
+    "tags": [
+      "display",
+      "code"
+    ]
+  },
+  {
+    "name": "ToolCall",
+    "slug": "tool-call",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "ToolCall — displays an AI tool invocation with status indicator, tool name, arguments, and optional result",
+    "tags": [
+      "display",
+      "tool-call"
+    ]
+  },
+  {
+    "name": "ToolApproval",
+    "slug": "tool-approval",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "ToolApproval — extends ToolCall with an approval prompt row",
+    "tags": [
+      "display",
+      "tool-approval"
+    ]
+  },
+  {
+    "name": "ProgressCircle",
+    "slug": "progress-circle",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "ProgressCircle component",
+    "tags": [
+      "display",
+      "progress-circle"
+    ]
+  },
+  {
+    "name": "Clock",
+    "slug": "clock",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Clock component",
+    "tags": [
+      "display",
+      "clock"
+    ]
+  },
+  {
+    "name": "Gradient",
+    "slug": "gradient",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Gradient — text rendered with a smooth color gradient",
+    "tags": [
+      "display",
+      "gradient"
+    ]
+  },
+  {
+    "name": "Collapsible",
+    "slug": "collapsible",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Collapsible — a toggleable section with title and body",
+    "tags": [
+      "display",
+      "collapsible"
+    ]
+  },
+  {
+    "name": "Kbd",
+    "slug": "kbd",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Kbd — an inline label representing a keyboard input",
+    "tags": [
+      "display",
+      "kbd"
+    ]
+  },
+  {
+    "name": "Timer",
+    "slug": "timer",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Timer — counts down from a duration to zero",
+    "tags": [
+      "display",
+      "timer"
+    ]
+  },
+  {
+    "name": "ThinkingBlock",
+    "slug": "thinking-block",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "ThinkingBlock component",
+    "tags": [
+      "display",
+      "thinking-block"
+    ]
+  },
+  {
+    "name": "StreamingText",
+    "slug": "streaming-text",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "StreamingText — renders text that \"streams in\" token by token with a blinking cursor",
+    "tags": [
+      "display",
+      "streaming-text"
+    ]
+  },
+  {
+    "name": "Watermark",
+    "slug": "watermark",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Watermark - fills its area with faint repeating text",
+    "tags": [
+      "display",
+      "watermark"
+    ]
+  },
+  {
+    "name": "Typewriter",
+    "slug": "typewriter",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Reveals static text character by character",
+    "tags": [
+      "display",
+      "typewriter"
+    ]
+  },
+  {
+    "name": "Timeline",
+    "slug": "timeline",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Timeline — renders a vertical list of timeline items",
+    "tags": [
+      "display",
+      "timeline"
+    ]
+  },
+  {
+    "name": "NotificationBadge",
+    "slug": "notification-badge",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "NotificationBadge - a small count label rendered at a corner position",
+    "tags": [
+      "display",
+      "notification-badge"
+    ]
+  },
+  {
+    "name": "Tree",
+    "slug": "tree",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Tree — a collapsible tree widget for displaying hierarchical data",
+    "tags": [
+      "display",
+      "tree"
+    ]
+  },
+  {
+    "name": "ChatThread",
+    "slug": "chat-thread",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "ChatThread component",
+    "tags": [
+      "display",
+      "chat-thread"
+    ]
+  },
+  {
+    "name": "Stepper",
+    "slug": "stepper",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Stepper — renders a sequence of steps with status indicators",
+    "tags": [
+      "display",
+      "stepper"
+    ]
+  },
+  {
+    "name": "Marquee",
+    "slug": "marquee",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Marquee component",
+    "tags": [
+      "display",
+      "marquee"
+    ]
+  },
+  {
+    "name": "Link",
+    "slug": "link",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Link component",
+    "tags": [
+      "display",
+      "link"
+    ]
+  },
+  {
+    "name": "Placeholder",
+    "slug": "placeholder",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "display",
+    "description": "Placeholder - a labeled stand-in box for prototyping terminal layouts",
+    "tags": [
+      "display",
+      "placeholder"
+    ]
+  },
+  {
+    "name": "Scrollbar",
+    "slug": "scrollbar",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "── Widget ───────────────────────────────────────────",
+    "tags": [
+      "feedback",
+      "scrollbar"
+    ]
+  },
+  {
+    "name": "Alert",
+    "slug": "alert",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "Alert — full-width status message box with a colored border and an icon prefix",
+    "tags": [
+      "feedback",
+      "alert"
+    ]
+  },
+  {
+    "name": "Banner",
+    "slug": "banner",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "Banner — full-width alert with title and body text",
+    "tags": [
+      "feedback",
+      "banner"
+    ]
+  },
+  {
+    "name": "BarColumn",
+    "slug": "bar-column",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "BarColumn component",
+    "tags": [
+      "feedback",
+      "bar-column"
+    ]
+  },
+  {
+    "name": "TextColumn",
+    "slug": "text-column",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "TextColumn component",
+    "tags": [
+      "feedback",
+      "text-column"
+    ]
+  },
+  {
+    "name": "TimeColumn",
+    "slug": "time-column",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "TimeColumn component",
+    "tags": [
+      "feedback",
+      "time-column"
+    ]
+  },
+  {
+    "name": "SpeedColumn",
+    "slug": "speed-column",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "SpeedColumn component",
+    "tags": [
+      "feedback",
+      "speed-column"
+    ]
+  },
+  {
+    "name": "PercentageColumn",
+    "slug": "percentage-column",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "PercentageColumn component",
+    "tags": [
+      "feedback",
+      "percentage-column"
+    ]
+  },
+  {
+    "name": "StatusMessage",
+    "slug": "status-message",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "StatusMessage — a single-line status indicator",
+    "tags": [
+      "feedback",
+      "status-message"
+    ]
+  },
+  {
+    "name": "Spinner",
+    "slug": "spinner",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "Spinner — animated loading indicator",
+    "tags": [
+      "feedback",
+      "spinner"
+    ]
+  },
+  {
+    "name": "SPINNER_FRAMES",
+    "slug": "s-p-i-n-n-e-r_-f-r-a-m-e-s",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "Built-in spinner frame sets",
+    "tags": [
+      "feedback",
+      "s-p-i-n-n-e-r_-f-r-a-m-e-s"
+    ]
+  },
+  {
+    "name": "Callout",
+    "slug": "callout",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "Callout component",
+    "tags": [
+      "feedback",
+      "callout"
+    ]
+  },
+  {
+    "name": "LoadingDots",
+    "slug": "loading-dots",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "LoadingDots component",
+    "tags": [
+      "feedback",
+      "loading-dots"
+    ]
+  },
+  {
+    "name": "Progress",
+    "slug": "progress",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "Progress component",
+    "tags": [
+      "feedback",
+      "progress"
+    ]
+  },
+  {
+    "name": "TaskList",
+    "slug": "task-list",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "TaskList — a vertical list of tasks with status indicators",
+    "tags": [
+      "feedback",
+      "task-list"
+    ]
+  },
+  {
+    "name": "ProgressBar",
+    "slug": "progress-bar",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "ProgressBar — horizontal progress indicator",
+    "tags": [
+      "feedback",
+      "progress-bar"
+    ]
+  },
+  {
+    "name": "MultiProgress",
+    "slug": "multi-progress",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "MultiProgress — stacks multiple labeled progress bars in a vertical list",
+    "tags": [
+      "feedback",
+      "multi-progress"
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "slug": "skeleton",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "Skeleton component",
+    "tags": [
+      "feedback",
+      "skeleton"
+    ]
+  },
+  {
+    "name": "EmptyState",
+    "slug": "empty-state",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "feedback",
+    "description": "EmptyState component",
+    "tags": [
+      "feedback",
+      "empty-state"
+    ]
+  },
+  {
+    "name": "ContextMenu",
+    "slug": "context-menu",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "ContextMenu — a floating menu widget positioned at absolute coordinates",
+    "tags": [
+      "input",
+      "context-menu"
+    ]
+  },
+  {
+    "name": "CommandPalette",
+    "slug": "command-palette",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "CommandPalette — a fuzzy-search overlay widget",
+    "tags": [
+      "input",
+      "command-palette"
+    ]
+  },
+  {
+    "name": "Checkbox",
+    "slug": "checkbox",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "Checkbox — a toggleable boolean input with a label",
+    "tags": [
+      "input",
+      "checkbox"
+    ]
+  },
+  {
+    "name": "Knob",
+    "slug": "knob",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "Knob component",
+    "tags": [
+      "input",
+      "knob"
+    ]
+  },
+  {
+    "name": "Button",
+    "slug": "button",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "Button — a pressable button with a label and visual variants",
+    "tags": [
+      "input",
+      "button"
+    ]
+  },
+  {
+    "name": "PinInput",
+    "slug": "pin-input",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "PinInput component",
+    "tags": [
+      "input",
+      "pin-input"
+    ]
+  },
+  {
+    "name": "Slider",
+    "slug": "slider",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "Slider component",
+    "tags": [
+      "input",
+      "slider"
+    ]
+  },
+  {
+    "name": "TextInput",
+    "slug": "text-input",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "TextInput — a single-line text input field with optional command auto-completion support",
+    "tags": [
+      "input",
+      "text-input"
+    ]
+  },
+  {
+    "name": "List",
+    "slug": "list",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "List — a scrollable, selectable list of items",
+    "tags": [
+      "input",
+      "list"
+    ]
+  },
+  {
+    "name": "VirtualList",
+    "slug": "virtual-list",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "VirtualList — a scroll-virtualized list widget",
+    "tags": [
+      "input",
+      "virtual-list"
+    ]
+  },
+  {
+    "name": "RangeInput",
+    "slug": "range-input",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "RangeInput component",
+    "tags": [
+      "input",
+      "range-input"
+    ]
+  },
+  {
+    "name": "computeRange",
+    "slug": "compute-range",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "Compute visible range for fixed-height items",
+    "tags": [
+      "input",
+      "compute-range"
+    ]
+  },
+  {
+    "name": "computeVariableRange",
+    "slug": "compute-variable-range",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "input",
+    "description": "Compute visible range for variable-height items",
+    "tags": [
+      "input",
+      "compute-variable-range"
+    ]
+  },
+  {
+    "name": "Panel",
+    "slug": "panel",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Panel — a labeled container widget",
+    "tags": [
+      "layout",
+      "panel"
+    ]
+  },
+  {
+    "name": "DraggableWidget",
+    "slug": "draggable-widget",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "DraggableWidget component",
+    "tags": [
+      "layout",
+      "draggable-widget"
+    ]
+  },
+  {
+    "name": "DroppableWidget",
+    "slug": "droppable-widget",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "DroppableWidget component",
+    "tags": [
+      "layout",
+      "droppable-widget"
+    ]
+  },
+  {
+    "name": "DragState",
+    "slug": "drag-state",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "── Drag State Manager ──",
+    "tags": [
+      "layout",
+      "drag-state"
+    ]
+  },
+  {
+    "name": "Stack",
+    "slug": "stack",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Stack — a widget that layers children on top of each other",
+    "tags": [
+      "layout",
+      "stack"
+    ]
+  },
+  {
+    "name": "ScrollView",
+    "slug": "scroll-view",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "ScrollView — a height-bounded scrollable container",
+    "tags": [
+      "layout",
+      "scroll-view"
+    ]
+  },
+  {
+    "name": "Columns",
+    "slug": "columns",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Columns — splits available width evenly across child widgets",
+    "tags": [
+      "layout",
+      "columns"
+    ]
+  },
+  {
+    "name": "Card",
+    "slug": "card",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Card — a bordered container with an optional title in the top border",
+    "tags": [
+      "layout",
+      "card"
+    ]
+  },
+  {
+    "name": "AspectRatio",
+    "slug": "aspect-ratio",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "AspectRatio component",
+    "tags": [
+      "layout",
+      "aspect-ratio"
+    ]
+  },
+  {
+    "name": "Dock",
+    "slug": "dock",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Dock component",
+    "tags": [
+      "layout",
+      "dock"
+    ]
+  },
+  {
+    "name": "Center",
+    "slug": "center",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Center — centers a single child widget horizontally and/or vertically",
+    "tags": [
+      "layout",
+      "center"
+    ]
+  },
+  {
+    "name": "Divider",
+    "slug": "divider",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Divider — a horizontal or vertical separator line with optional label",
+    "tags": [
+      "layout",
+      "divider"
+    ]
+  },
+  {
+    "name": "SplitPane",
+    "slug": "split-pane",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "SplitPane — two-pane resizable layout widget",
+    "tags": [
+      "layout",
+      "split-pane"
+    ]
+  },
+  {
+    "name": "Fill",
+    "slug": "fill",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Fill component",
+    "tags": [
+      "layout",
+      "fill"
+    ]
+  },
+  {
+    "name": "Masonry",
+    "slug": "masonry",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Masonry component",
+    "tags": [
+      "layout",
+      "masonry"
+    ]
+  },
+  {
+    "name": "ScrollAcceleration",
+    "slug": "scroll-acceleration",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "ScrollAcceleration component",
+    "tags": [
+      "layout",
+      "scroll-acceleration"
+    ]
+  },
+  {
+    "name": "Grid",
+    "slug": "grid",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "Grid — a true CSS-Grid-like layout container",
+    "tags": [
+      "layout",
+      "grid"
+    ]
+  },
+  {
+    "name": "GridItem",
+    "slug": "grid-item",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "layout",
+    "description": "GridItem — a child container that can define grid column/row spans or starts",
+    "tags": [
+      "layout",
+      "grid-item"
+    ]
+  },
+  {
+    "name": "BulletChart",
+    "slug": "bullet-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "BulletChart — a metric display with target marker and qualitative range bands",
+    "tags": [
+      "data",
+      "bullet-chart"
+    ]
+  },
+  {
+    "name": "Hexdump",
+    "slug": "hexdump",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Hexdump component",
+    "tags": [
+      "data",
+      "hexdump"
+    ]
+  },
+  {
+    "name": "TreeTable",
+    "slug": "tree-table",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "TreeTable — combines Tree expand/collapse with Table columns",
+    "tags": [
+      "data",
+      "tree-table"
+    ]
+  },
+  {
+    "name": "Table",
+    "slug": "table",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Table — renders tabular data with columns, headers, and optional zebra-striping",
+    "tags": [
+      "data",
+      "table"
+    ]
+  },
+  {
+    "name": "RadarChart",
+    "slug": "radar-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "RadarChart component",
+    "tags": [
+      "data",
+      "radar-chart"
+    ]
+  },
+  {
+    "name": "BrailleCanvas",
+    "slug": "braille-canvas",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "BrailleCanvas component",
+    "tags": [
+      "data",
+      "braille-canvas"
+    ]
+  },
+  {
+    "name": "Definition",
+    "slug": "definition",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Definition — term + definition pairs, stacked vertically",
+    "tags": [
+      "data",
+      "definition"
+    ]
+  },
+  {
+    "name": "DataGrid",
+    "slug": "data-grid",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "DataGrid component",
+    "tags": [
+      "data",
+      "data-grid"
+    ]
+  },
+  {
+    "name": "useListState",
+    "slug": "use-list-state",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Hook that creates a fresh ListState",
+    "tags": [
+      "data",
+      "use-list-state"
+    ]
+  },
+  {
+    "name": "Stat",
+    "slug": "stat",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Stat component",
+    "tags": [
+      "data",
+      "stat"
+    ]
+  },
+  {
+    "name": "BarChart",
+    "slug": "bar-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "── Widget ───────────────────────────────────────────",
+    "tags": [
+      "data",
+      "bar-chart"
+    ]
+  },
+  {
+    "name": "Calendar",
+    "slug": "calendar",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Calendar component",
+    "tags": [
+      "data",
+      "calendar"
+    ]
+  },
+  {
+    "name": "Sparkline",
+    "slug": "sparkline",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Sparkline — a compact inline chart showing a data trend",
+    "tags": [
+      "data",
+      "sparkline"
+    ]
+  },
+  {
+    "name": "CandlestickChart",
+    "slug": "candlestick-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "CandlestickChart — renders OHLC candle data as a terminal chart",
+    "tags": [
+      "data",
+      "candlestick-chart"
+    ]
+  },
+  {
+    "name": "LineChart",
+    "slug": "line-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "LineChart — ASCII/Unicode line plot for a series of numbers",
+    "tags": [
+      "data",
+      "line-chart"
+    ]
+  },
+  {
+    "name": "AreaChart",
+    "slug": "area-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "AreaChart component",
+    "tags": [
+      "data",
+      "area-chart"
+    ]
+  },
+  {
+    "name": "useTableState",
+    "slug": "use-table-state",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Hook that creates a fresh TableState",
+    "tags": [
+      "data",
+      "use-table-state"
+    ]
+  },
+  {
+    "name": "StackedBarChart",
+    "slug": "stacked-bar-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "StackedBarChart component",
+    "tags": [
+      "data",
+      "stacked-bar-chart"
+    ]
+  },
+  {
+    "name": "Histogram",
+    "slug": "histogram",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Histogram component",
+    "tags": [
+      "data",
+      "histogram"
+    ]
+  },
+  {
+    "name": "Meter",
+    "slug": "meter",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Meter — a self-contained metric display with label, bar, and value with low/optimum/high thresholds",
+    "tags": [
+      "data",
+      "meter"
+    ]
+  },
+  {
+    "name": "PieChart",
+    "slug": "pie-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "PieChart component",
+    "tags": [
+      "data",
+      "pie-chart"
+    ]
+  },
+  {
+    "name": "GanttChart",
+    "slug": "gantt-chart",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "GanttChart component",
+    "tags": [
+      "data",
+      "gantt-chart"
+    ]
+  },
+  {
+    "name": "StatusIndicator",
+    "slug": "status-indicator",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "StatusIndicator — simple up/down indicator with label",
+    "tags": [
+      "data",
+      "status-indicator"
+    ]
+  },
+  {
+    "name": "ScatterPlot",
+    "slug": "scatter-plot",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "ScatterPlot component",
+    "tags": [
+      "data",
+      "scatter-plot"
+    ]
+  },
+  {
+    "name": "KeyValue",
+    "slug": "key-value",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "KeyValue — aligned key: value pairs",
+    "tags": [
+      "data",
+      "key-value"
+    ]
+  },
+  {
+    "name": "Gauge",
+    "slug": "gauge",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Gauge — a self-contained metric display with label, bar, and value",
+    "tags": [
+      "data",
+      "gauge"
+    ]
+  },
+  {
+    "name": "HeatMap",
+    "slug": "heat-map",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "HeatMap — 2D matrix displayed with character-density shading",
+    "tags": [
+      "data",
+      "heat-map"
+    ]
+  },
+  {
+    "name": "Sidebar",
+    "slug": "sidebar",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "Sidebar — a vertical list of navigation items with optional badges",
+    "tags": [
+      "data",
+      "sidebar"
+    ]
+  },
+  {
+    "name": "LineGauge",
+    "slug": "line-gauge",
+    "package": "@termuijs/widgets",
+    "importPath": "@termuijs/widgets",
+    "category": "data",
+    "description": "LineGauge component",
+    "tags": [
+      "data",
+      "line-gauge"
+    ]
+  },
+  {
+    "name": "useCounter",
+    "slug": "use-counter",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useCounter component",
+    "tags": [
+      "hook",
+      "use-counter"
+    ]
+  },
+  {
+    "name": "useModal",
+    "slug": "use-modal",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useModal — typed modal manager with queueing and cleanup",
+    "tags": [
+      "hook",
+      "use-modal"
+    ]
+  },
+  {
+    "name": "useViewMeta",
+    "slug": "use-view-meta",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useViewMeta component",
+    "tags": [
+      "hook",
+      "use-view-meta"
+    ]
+  },
+  {
+    "name": "useTerminalSize",
+    "slug": "use-terminal-size",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useTerminalSize component",
+    "tags": [
+      "hook",
+      "use-terminal-size"
+    ]
+  },
+  {
+    "name": "AUDIBLE_FEEDBACK_TYPES",
+    "slug": "a-u-d-i-b-l-e_-f-e-e-d-b-a-c-k_-t-y-p-e-s",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "Types that produce an audible bell",
+    "tags": [
+      "hook",
+      "a-u-d-i-b-l-e_-f-e-e-d-b-a-c-k_-t-y-p-e-s"
+    ]
+  },
+  {
+    "name": "triggerFeedback",
+    "slug": "trigger-feedback",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "Fire feedback for a given interaction type",
+    "tags": [
+      "hook",
+      "trigger-feedback"
+    ]
+  },
+  {
+    "name": "useFeedback",
+    "slug": "use-feedback",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useFeedback component",
+    "tags": [
+      "hook",
+      "use-feedback"
+    ]
+  },
+  {
+    "name": "useFocusWithin",
+    "slug": "use-focus-within",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useFocusWithin — check if focus is within a list of IDs",
+    "tags": [
+      "hook",
+      "use-focus-within"
+    ]
+  },
+  {
+    "name": "useToggle",
+    "slug": "use-toggle",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useToggle component",
+    "tags": [
+      "hook",
+      "use-toggle"
+    ]
+  },
+  {
+    "name": "useTypeahead",
+    "slug": "use-typeahead",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "Accumulates printable character keypresses to navigate lists by typing",
+    "tags": [
+      "hook",
+      "use-typeahead"
+    ]
+  },
+  {
+    "name": "useKeyboardNavigation",
+    "slug": "use-keyboard-navigation",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useKeyboardNavigation — arrow-key list navigation with wrap/clamp support",
+    "tags": [
+      "hook",
+      "use-keyboard-navigation"
+    ]
+  },
+  {
+    "name": "useSubprocess",
+    "slug": "use-subprocess",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useSubprocess component",
+    "tags": [
+      "hook",
+      "use-subprocess"
+    ]
+  },
+  {
+    "name": "useFocus",
+    "slug": "use-focus",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useFocus — consume focus state for a focusable element",
+    "tags": [
+      "hook",
+      "use-focus"
+    ]
+  },
+  {
+    "name": "useThrottle",
+    "slug": "use-throttle",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useThrottle — throttle a changing value",
+    "tags": [
+      "hook",
+      "use-throttle"
+    ]
+  },
+  {
+    "name": "useTimeout",
+    "slug": "use-timeout",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useTimeout — run a callback once after a delay",
+    "tags": [
+      "hook",
+      "use-timeout"
+    ]
+  },
+  {
+    "name": "useBoolean",
+    "slug": "use-boolean",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useBoolean component",
+    "tags": [
+      "hook",
+      "use-boolean"
+    ]
+  },
+  {
+    "name": "useBell",
+    "slug": "use-bell",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useBell - A React-like hook for triggering the terminal bell",
+    "tags": [
+      "hook",
+      "use-bell"
+    ]
+  },
+  {
+    "name": "useList",
+    "slug": "use-list",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useList component",
+    "tags": [
+      "hook",
+      "use-list"
+    ]
+  },
+  {
+    "name": "detectPackageManager",
+    "slug": "detect-package-manager",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "Detect the running package manager from environment variables",
+    "tags": [
+      "hook",
+      "detect-package-manager"
+    ]
+  },
+  {
+    "name": "getPackageManagerCommands",
+    "slug": "get-package-manager-commands",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "Return command helpers for the given package manager",
+    "tags": [
+      "hook",
+      "get-package-manager-commands"
+    ]
+  },
+  {
+    "name": "usePackageManager",
+    "slug": "use-package-manager",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "Hook: returns commands for the detected package manager (stable across renders)",
+    "tags": [
+      "hook",
+      "use-package-manager"
+    ]
+  },
+  {
+    "name": "useStopwatch",
+    "slug": "use-stopwatch",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useStopwatch — tracks elapsed time with start, pause, and reset controls",
+    "tags": [
+      "hook",
+      "use-stopwatch"
+    ]
+  },
+  {
+    "name": "useMap",
+    "slug": "use-map",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useMap component",
+    "tags": [
+      "hook",
+      "use-map"
+    ]
+  },
+  {
+    "name": "useDebounce",
+    "slug": "use-debounce",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useDebounce — debounce a changing value",
+    "tags": [
+      "hook",
+      "use-debounce"
+    ]
+  },
+  {
+    "name": "useFocusManager",
+    "slug": "use-focus-manager",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useFocusManager — manages focus state for a subtree",
+    "tags": [
+      "hook",
+      "use-focus-manager"
+    ]
+  },
+  {
+    "name": "useCountdown",
+    "slug": "use-countdown",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useCountdown — counts down from a start value with start, pause, and reset controls",
+    "tags": [
+      "hook",
+      "use-countdown"
+    ]
+  },
+  {
+    "name": "useElementSize",
+    "slug": "use-element-size",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useElementSize — track the size of a widget element",
+    "tags": [
+      "hook",
+      "use-element-size"
+    ]
+  },
+  {
+    "name": "useClipboard",
+    "slug": "use-clipboard",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useClipboard — interact with the system clipboard",
+    "tags": [
+      "hook",
+      "use-clipboard"
+    ]
+  },
+  {
+    "name": "useFocusTrap",
+    "slug": "use-focus-trap",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useFocusTrap — cycle Tab / Shift+Tab focus through a fixed list of IDs",
+    "tags": [
+      "hook",
+      "use-focus-trap"
+    ]
+  },
+  {
+    "name": "useSet",
+    "slug": "use-set",
+    "package": "@termuijs/jsx",
+    "importPath": "@termuijs/jsx",
+    "category": "hook",
+    "description": "useSet component",
+    "tags": [
+      "hook",
+      "use-set"
+    ]
+  },
+  {
+    "name": "SortPrompt",
+    "slug": "sort-prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "SortPrompt component",
+    "tags": [
+      "template",
+      "sort-prompt"
+    ]
+  },
+  {
+    "name": "validateInput",
+    "slug": "validate-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "validateInput component",
+    "tags": [
+      "template",
+      "validate-input"
+    ]
+  },
+  {
+    "name": "AppShell",
+    "slug": "app-shell",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "AppShell component",
+    "tags": [
+      "template",
+      "app-shell"
+    ]
+  },
+  {
+    "name": "RadioGroup",
+    "slug": "radio-group",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "RadioGroup — renders a vertical list of mutually exclusive options",
+    "tags": [
+      "template",
+      "radio-group"
+    ]
+  },
+  {
+    "name": "WelcomeScreen",
+    "slug": "welcome-screen",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "WelcomeScreen component",
+    "tags": [
+      "template",
+      "welcome-screen"
+    ]
+  },
+  {
+    "name": "Autocomplete",
+    "slug": "autocomplete",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Autocomplete component",
+    "tags": [
+      "template",
+      "autocomplete"
+    ]
+  },
+  {
+    "name": "TokenUsage",
+    "slug": "token-usage",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "TokenUsage component",
+    "tags": [
+      "template",
+      "token-usage"
+    ]
+  },
+  {
+    "name": "Popover",
+    "slug": "popover",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Popover component",
+    "tags": [
+      "template",
+      "popover"
+    ]
+  },
+  {
+    "name": "Select",
+    "slug": "select",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Select component",
+    "tags": [
+      "template",
+      "select"
+    ]
+  },
+  {
+    "name": "Pagination",
+    "slug": "pagination",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Pagination component",
+    "tags": [
+      "template",
+      "pagination"
+    ]
+  },
+  {
+    "name": "PasswordInput",
+    "slug": "password-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "PasswordInput component",
+    "tags": [
+      "template",
+      "password-input"
+    ]
+  },
+  {
+    "name": "ContentSwitcher",
+    "slug": "content-switcher",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "ContentSwitcher component",
+    "tags": [
+      "template",
+      "content-switcher"
+    ]
+  },
+  {
+    "name": "Modal",
+    "slug": "modal",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Modal component",
+    "tags": [
+      "template",
+      "modal"
+    ]
+  },
+  {
+    "name": "QuizPrompt",
+    "slug": "quiz-prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "QuizPrompt component",
+    "tags": [
+      "template",
+      "quiz-prompt"
+    ]
+  },
+  {
+    "name": "Toast",
+    "slug": "toast",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Toast component",
+    "tags": [
+      "template",
+      "toast"
+    ]
+  },
+  {
+    "name": "NotificationStore",
+    "slug": "notification-store",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "── NotificationStore (singleton) ──────────────────────────────────────────",
+    "tags": [
+      "template",
+      "notification-store"
+    ]
+  },
+  {
+    "name": "NotificationCenter",
+    "slug": "notification-center",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "NotificationCenter component",
+    "tags": [
+      "template",
+      "notification-center"
+    ]
+  },
+  {
+    "name": "notifications",
+    "slug": "notifications",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Global singleton accessor",
+    "tags": [
+      "template",
+      "notifications"
+    ]
+  },
+  {
+    "name": "useNotifications",
+    "slug": "use-notifications",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "── useNotifications JSX hook ───────────────────────────────────────────────",
+    "tags": [
+      "template",
+      "use-notifications"
+    ]
+  },
+  {
+    "name": "NumberInput",
+    "slug": "number-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "NumberInput component",
+    "tags": [
+      "template",
+      "number-input"
+    ]
+  },
+  {
+    "name": "SetupFlow",
+    "slug": "setup-flow",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "SetupFlow component",
+    "tags": [
+      "template",
+      "setup-flow"
+    ]
+  },
+  {
+    "name": "DatePicker",
+    "slug": "date-picker",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "DatePicker component",
+    "tags": [
+      "template",
+      "date-picker"
+    ]
+  },
+  {
+    "name": "TagInput",
+    "slug": "tag-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "TagInput component",
+    "tags": [
+      "template",
+      "tag-input"
+    ]
+  },
+  {
+    "name": "TreeSelect",
+    "slug": "tree-select",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "TreeSelect component",
+    "tags": [
+      "template",
+      "tree-select"
+    ]
+  },
+  {
+    "name": "Pages",
+    "slug": "pages",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Pages component",
+    "tags": [
+      "template",
+      "pages"
+    ]
+  },
+  {
+    "name": "Form",
+    "slug": "form",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Form component",
+    "tags": [
+      "template",
+      "form"
+    ]
+  },
+  {
+    "name": "Menu",
+    "slug": "menu",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Menu — a vertical list of interactive items supporting keyboard navigation, shortcuts, and disabled states",
+    "tags": [
+      "template",
+      "menu"
+    ]
+  },
+  {
+    "name": "SearchInput",
+    "slug": "search-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "SearchInput component",
+    "tags": [
+      "template",
+      "search-input"
+    ]
+  },
+  {
+    "name": "TimePicker",
+    "slug": "time-picker",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "TimePicker component",
+    "tags": [
+      "template",
+      "time-picker"
+    ]
+  },
+  {
+    "name": "Wizard",
+    "slug": "wizard",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Wizard component",
+    "tags": [
+      "template",
+      "wizard"
+    ]
+  },
+  {
+    "name": "Transfer",
+    "slug": "transfer",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Transfer component",
+    "tags": [
+      "template",
+      "transfer"
+    ]
+  },
+  {
+    "name": "SnippetPrompt",
+    "slug": "snippet-prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "SnippetPrompt component",
+    "tags": [
+      "template",
+      "snippet-prompt"
+    ]
+  },
+  {
+    "name": "ConfirmDialog",
+    "slug": "confirm-dialog",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "ConfirmDialog component",
+    "tags": [
+      "template",
+      "confirm-dialog"
+    ]
+  },
+  {
+    "name": "Switch",
+    "slug": "switch",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Switch component",
+    "tags": [
+      "template",
+      "switch"
+    ]
+  },
+  {
+    "name": "NonInteractiveError",
+    "slug": "non-interactive-error",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "NonInteractiveError component",
+    "tags": [
+      "template",
+      "non-interactive-error"
+    ]
+  },
+  {
+    "name": "prompt",
+    "slug": "prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Imperative prompts for CLI scripts — no widget stack required",
+    "tags": [
+      "template",
+      "prompt"
+    ]
+  },
+  {
+    "name": "EditablePrompt",
+    "slug": "editable-prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "EditablePrompt component",
+    "tags": [
+      "template",
+      "editable-prompt"
+    ]
+  },
+  {
+    "name": "Draggable",
+    "slug": "draggable",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Draggable component",
+    "tags": [
+      "template",
+      "draggable"
+    ]
+  },
+  {
+    "name": "Droppable",
+    "slug": "droppable",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Droppable component",
+    "tags": [
+      "template",
+      "droppable"
+    ]
+  },
+  {
+    "name": "FormContext",
+    "slug": "form-context",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "FormContext component",
+    "tags": [
+      "template",
+      "form-context"
+    ]
+  },
+  {
+    "name": "FormBuilder",
+    "slug": "form-builder",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "FormBuilder component",
+    "tags": [
+      "template",
+      "form-builder"
+    ]
+  },
+  {
+    "name": "useForm",
+    "slug": "use-form",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "useForm component",
+    "tags": [
+      "template",
+      "use-form"
+    ]
+  },
+  {
+    "name": "SegmentedControl",
+    "slug": "segmented-control",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "SegmentedControl component",
+    "tags": [
+      "template",
+      "segmented-control"
+    ]
+  },
+  {
+    "name": "FilePicker",
+    "slug": "file-picker",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "FilePicker — an interactive file browser widget",
+    "tags": [
+      "template",
+      "file-picker"
+    ]
+  },
+  {
+    "name": "LinearPrompt",
+    "slug": "linear-prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "LinearPrompt component",
+    "tags": [
+      "template",
+      "linear-prompt"
+    ]
+  },
+  {
+    "name": "MultiSelect",
+    "slug": "multi-select",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "MultiSelect component",
+    "tags": [
+      "template",
+      "multi-select"
+    ]
+  },
+  {
+    "name": "SearchableSelect",
+    "slug": "searchable-select",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "SearchableSelect component",
+    "tags": [
+      "template",
+      "searchable-select"
+    ]
+  },
+  {
+    "name": "ThemeSwitcher",
+    "slug": "theme-switcher",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "ThemeSwitcher component",
+    "tags": [
+      "template",
+      "theme-switcher"
+    ]
+  },
+  {
+    "name": "EmailInput",
+    "slug": "email-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "EmailInput component",
+    "tags": [
+      "template",
+      "email-input"
+    ]
+  },
+  {
+    "name": "Disclosure",
+    "slug": "disclosure",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Disclosure component",
+    "tags": [
+      "template",
+      "disclosure"
+    ]
+  },
+  {
+    "name": "ButtonGroup",
+    "slug": "button-group",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "ButtonGroup component",
+    "tags": [
+      "template",
+      "button-group"
+    ]
+  },
+  {
+    "name": "MaskedInput",
+    "slug": "masked-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "MaskedInput component",
+    "tags": [
+      "template",
+      "masked-input"
+    ]
+  },
+  {
+    "name": "Announcer",
+    "slug": "announcer",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Announcer component",
+    "tags": [
+      "template",
+      "announcer"
+    ]
+  },
+  {
+    "name": "CheckboxGroup",
+    "slug": "checkbox-group",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "CheckboxGroup component",
+    "tags": [
+      "template",
+      "checkbox-group"
+    ]
+  },
+  {
+    "name": "Listbar",
+    "slug": "listbar",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Listbar component",
+    "tags": [
+      "template",
+      "listbar"
+    ]
+  },
+  {
+    "name": "Rating",
+    "slug": "rating",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Rating — renders a row of star glyphs for a 1-to-N rating",
+    "tags": [
+      "template",
+      "rating"
+    ]
+  },
+  {
+    "name": "DateRangePicker",
+    "slug": "date-range-picker",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "DateRangePicker component",
+    "tags": [
+      "template",
+      "date-range-picker"
+    ]
+  },
+  {
+    "name": "Spacer",
+    "slug": "spacer",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Spacer component",
+    "tags": [
+      "template",
+      "spacer"
+    ]
+  },
+  {
+    "name": "BasicAuthPrompt",
+    "slug": "basic-auth-prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "BasicAuthPrompt component",
+    "tags": [
+      "template",
+      "basic-auth-prompt"
+    ]
+  },
+  {
+    "name": "SurveyPrompt",
+    "slug": "survey-prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "SurveyPrompt component",
+    "tags": [
+      "template",
+      "survey-prompt"
+    ]
+  },
+  {
+    "name": "MultilineTextInput",
+    "slug": "multiline-text-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "MultilineTextInput component",
+    "tags": [
+      "template",
+      "multiline-text-input"
+    ]
+  },
+  {
+    "name": "Tabs",
+    "slug": "tabs",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Tabs component",
+    "tags": [
+      "template",
+      "tabs"
+    ]
+  },
+  {
+    "name": "PathInput",
+    "slug": "path-input",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "PathInput — filesystem path input with Tab-completion",
+    "tags": [
+      "template",
+      "path-input"
+    ]
+  },
+  {
+    "name": "ColorPicker",
+    "slug": "color-picker",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "ColorPicker component",
+    "tags": [
+      "template",
+      "color-picker"
+    ]
+  },
+  {
+    "name": "Drawer",
+    "slug": "drawer",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Drawer — a side panel that slides in from any edge",
+    "tags": [
+      "template",
+      "drawer"
+    ]
+  },
+  {
+    "name": "TextArea",
+    "slug": "text-area",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "TextArea - a multi-line text input field",
+    "tags": [
+      "template",
+      "text-area"
+    ]
+  },
+  {
+    "name": "Breadcrumb",
+    "slug": "breadcrumb",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Breadcrumb component",
+    "tags": [
+      "template",
+      "breadcrumb"
+    ]
+  },
+  {
+    "name": "Combobox",
+    "slug": "combobox",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "Combobox component",
+    "tags": [
+      "template",
+      "combobox"
+    ]
+  },
+  {
+    "name": "MenuBar",
+    "slug": "menu-bar",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "MenuBar component",
+    "tags": [
+      "template",
+      "menu-bar"
+    ]
+  },
+  {
+    "name": "KeyboardShortcuts",
+    "slug": "keyboard-shortcuts",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "KeyboardShortcuts component",
+    "tags": [
+      "template",
+      "keyboard-shortcuts"
+    ]
+  },
+  {
+    "name": "ScalePrompt",
+    "slug": "scale-prompt",
+    "package": "@termuijs/ui",
+    "importPath": "@termuijs/ui",
+    "category": "template",
+    "description": "ScalePrompt component",
+    "tags": [
+      "template",
+      "scale-prompt"
+    ]
+  }
+]

@@ -1,4 +1,6 @@
-import { Link } from '@tanstack/react-router'
+'use client'
+
+import Link from 'next/link'
 import { packages, categoryLabels } from '../../data/packages'
 import type { PackageInfo } from '../../data/packages'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
@@ -26,7 +28,7 @@ function PackageCard({ pkg, index }: { pkg: PackageInfo; index: number }) {
     return (
         <Link
             ref={ref}
-            to={`/docs/${pkg.section}/overview` as any}
+            href={`/docs/${pkg.section}/overview`}
             className="pkg-card"
             style={{ '--i': index } as React.CSSProperties}
         >

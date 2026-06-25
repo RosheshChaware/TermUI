@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import Link from 'next/link'
 
 export function Footer() {
     const year = new Date().getFullYear()
@@ -44,10 +44,10 @@ export function Footer() {
                             <span className="footer-col-path">docs/</span>
                         </div>
                         <ul>
-                            <li><Link to={"/docs/getting-started/installation" as any}>Getting Started</Link></li>
-                            <li><Link to={"/docs/core/overview" as any}>API Reference</Link></li>
-                            <li><Link to={"/docs/guides/first-app" as any}>Guides</Link></li>
-                            <li><Link to={"/docs/getting-started/architecture" as any}>Architecture</Link></li>
+                            <li><Link href="/docs/getting-started/installation">Getting Started</Link></li>
+                            <li><Link href="/docs/core/overview">API Reference</Link></li>
+                            <li><Link href="/docs/guides/first-app">Guides</Link></li>
+                            <li><Link href="/docs/getting-started/architecture">Architecture</Link></li>
                         </ul>
                     </div>
 
@@ -58,11 +58,11 @@ export function Footer() {
                             <span className="footer-col-path">packages/</span>
                         </div>
                         <ul>
-                            <li><Link to={"/docs/core/overview" as any}>@termuijs/core</Link></li>
-                            <li><Link to={"/docs/widgets/overview" as any}>@termuijs/widgets</Link></li>
-                            <li><Link to={"/docs/ui/overview" as any}>@termuijs/ui</Link></li>
-                            <li><Link to={"/docs/tss/overview" as any}>@termuijs/tss</Link></li>
-                            <li><Link to={"/docs/motion/springs" as any}>@termuijs/motion</Link></li>
+                            <li><Link href="/docs/core/overview">@termuijs/core</Link></li>
+                            <li><Link href="/docs/widgets/overview">@termuijs/widgets</Link></li>
+                            <li><Link href="/docs/ui/overview">@termuijs/ui</Link></li>
+                            <li><Link href="/docs/tss/overview">@termuijs/tss</Link></li>
+                            <li><Link href="/docs/motion/springs">@termuijs/motion</Link></li>
                         </ul>
                     </div>
 

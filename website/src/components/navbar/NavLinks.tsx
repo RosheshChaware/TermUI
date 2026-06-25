@@ -1,5 +1,8 @@
+'use client'
+
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { Link, useRouterState } from '@tanstack/react-router'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useMagnetic } from '@/hooks/useMagnetic'
 import { MegaDropdown, type MegaSection } from './MegaDropdown'
 import {
@@ -71,8 +74,7 @@ interface NavLinkDef {
 }
 
 export function NavLinks() {
-  const routerState = useRouterState()
-  const currentPath = routerState.location.pathname
+  const currentPath = usePathname()
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [activeIndicator, setActiveIndicator] = useState<{ left: number; width: number }>({ left: 0, width: 0 })
   const linksContainerRef = useRef<HTMLUListElement>(null)
@@ -148,7 +150,7 @@ export function NavLinks() {
         >
           {link.href ? (
             <Link
-              to={link.href as any}
+              href={link.href}
               data-active={link.isActive}
               className={`nav-link${link.isActive ? ' active' : ''}`}
               {...magnetic}

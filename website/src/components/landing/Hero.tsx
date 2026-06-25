@@ -1,5 +1,7 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
-import { Link } from '@tanstack/react-router'
+import Link from 'next/link'
 import { MatrixRain } from './MatrixRain'
 import { useCounter } from '../../hooks/useCounter'
 import { useMagnetic } from '../../hooks/useMagnetic'
@@ -278,7 +280,7 @@ export function Hero() {
 
                     <div className="hero-cta">
                         <Link
-                            to={"/docs/getting-started/installation" as any}
+                            href="/docs/getting-started/installation"
                             className="btn btn-primary btn-lg hero-btn-magnetic"
                             onMouseMove={primaryBtn.onMouseMove}
                             onMouseLeave={primaryBtn.onMouseLeave}

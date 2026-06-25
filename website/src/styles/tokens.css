@@ -1,0 +1,122 @@
+/* ─────────────────────────────────────────────────────
+   Terminal Noir — Design Tokens
+   ───────────────────────────────────────────────────── */
+
+
+:root {
+  /* ── Palette ─────────────────────────────────────── */
+  --bg-primary:       #000000;
+  --bg-secondary:     #12121a;
+  --bg-tertiary:      #1a1a28;
+  --bg-surface:       #22223a;
+  --bg-elevated:      #2a2a45;
+
+  --border-subtle:    rgba(42, 42, 64, 0.25);
+  --border-medium:    rgba(60, 60, 96, 0.35);
+  --border-accent:    rgba(0, 255, 136, 0.2);
+
+  --text-primary:     #e8e8f0;
+  --text-secondary:   #9898b8;
+  --text-muted:       #6e6e9a;
+  --text-inverse:     #0a0a0f;
+
+  --accent:           #00ff88;
+  --accent-dim:       #00cc6a;
+  --accent-glow:      rgba(0, 255, 136, 0.15);
+  --accent-glow-strong: rgba(0, 255, 136, 0.3);
+
+  --cyan:             #00d4ff;
+  --cyan-dim:         #0099cc;
+  --amber:            #ffaa00;
+  --rose:             #ff4466;
+  --purple:           #aa66ff;
+
+  /* ── Typography ──────────────────────────────────── */
+  --font-display:     'JetBrains Mono', 'Fira Code', monospace;
+  --font-body:        'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-code:        'Fira Code', 'JetBrains Mono', monospace;
+
+  --text-xs:          0.75rem;
+  --text-sm:          0.875rem;
+  --text-base:        1rem;
+  --text-lg:          1.125rem;
+  --text-xl:          1.25rem;
+  --text-2xl:         1.5rem;
+  --text-3xl:         2rem;
+  --text-4xl:         2.5rem;
+  --text-5xl:         3.5rem;
+  --text-6xl:         4.5rem;
+
+  --leading-tight:    1.2;
+  --leading-normal:   1.6;
+  --leading-relaxed:  1.8;
+
+  --weight-normal:    400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-black:     900;
+
+  /* ── Spacing ─────────────────────────────────────── */
+  --space-1:          0.25rem;
+  --space-2:          0.5rem;
+  --space-3:          0.75rem;
+  --space-4:          1rem;
+  --space-5:          1.25rem;
+  --space-6:          1.5rem;
+  --space-8:          2rem;
+  --space-10:         2.5rem;
+  --space-12:         3rem;
+  --space-16:         4rem;
+  --space-20:         5rem;
+  --space-24:         6rem;
+  --space-32:         8rem;
+
+  /* ── Layout ──────────────────────────────────────── */
+  --max-width:        1280px;
+  --sidebar-width:    260px;
+  --toc-width:        220px;
+  --navbar-height:    64px;
+
+  /* ── Radii ───────────────────────────────────────── */
+  --radius-sm:        6px;
+  --radius-md:        10px;
+  --radius-lg:        16px;
+  --radius-xl:        24px;
+
+  /* ── Shadows ─────────────────────────────────────── */
+  --shadow-sm:        0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md:        0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg:        0 8px 30px rgba(0, 0, 0, 0.6);
+  --shadow-glow:      0 0 20px var(--accent-glow), 0 0 60px var(--accent-glow);
+  --shadow-glow-sm:   0 0 10px var(--accent-glow);
+  --shadow-cyan-glow: 0 0 20px rgba(0, 212, 255, 0.15);
+
+  /* ── Glow Intensities ────────────────────────────── */
+  --glow-intense:     rgba(0, 255, 136, 0.5);
+  --glow-ultra:       rgba(0, 255, 136, 0.7);
+
+  /* ── 3D / Perspective ────────────────────────────── */
+  --perspective-card: 1200px;
+  --tilt-x:           2deg;
+  --tilt-y:           -6deg;
+
+  /* ── Transitions ─────────────────────────────────── */
+  --ease-out:         cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-expo:        cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:    150ms;
+  --duration-normal:  250ms;
+  --duration-slow:    400ms;
+  --duration-hero:    800ms;
+  --duration-reveal:  600ms;
+  --stagger-base:     0.06s;
+  --stagger-line:     0.08s;
+
+  /* ── Z-index ─────────────────────────────────────── */
+  --z-sidebar:        100;
+  --z-navbar:         200;
+  --z-modal:          300;
+  --z-toast:          400;
+  --z-cursor:         10000;
+}
