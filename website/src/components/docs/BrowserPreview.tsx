@@ -150,6 +150,19 @@ export function BrowserPreview({
 
         const widget = factory()
         const app = new App(widget, opts)
+
+        // App never auto-discovers focusables — must register manually before mount()
+        // so FocusManager queues the focus event for replay when focus.start() fires
+        const registerFocusables = (w: any) => {
+            if (w?.id && w?.focusable) {
+                app.focus.register({ id: w.id, tabIndex: w.tabIndex ?? 0, focusable: true })
+            }
+            for (const child of (w?._children ?? w?.children ?? [])) {
+                registerFocusables(child)
+            }
+        }
+        registerFocusables(widget)
+
         app.mount().catch(console.error)
 
         // Re-fit after browser has computed final layout — onResize propagates cols/rows to App
