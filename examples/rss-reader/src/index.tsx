@@ -1,12 +1,55 @@
 /** @jsxImportSource @termuijs/jsx */
 import { caps, wordWrap } from '@termuijs/core';
-import { renderApp, useEffect, useKeymap, useRef, useState } from '@termuijs/jsx';
+import { renderApp, useEffect, useInput, useRef, useState } from '@termuijs/jsx';
 import { Box, Center, List, ScrollView, Text, useListState, type ListItem } from '@termuijs/widgets';
+
+// ── JSX augmentation for <card> ──────────────────────
+declare module '@termuijs/jsx' {
+    export namespace JSX {
+        interface IntrinsicElements {
+            card: {
+                children?: any;
+                key?: string | number;
+                title?: string;
+                borderColor?: string;
+                flexGrow?: number;
+                flexShrink?: number;
+                width?: number | string;
+                height?: number | string;
+                padding?: number;
+                margin?: number;
+                border?: string;
+            };
+        }
+    }
+}
+
+declare module '@termuijs/jsx/jsx-runtime' {
+    export namespace JSX {
+        interface IntrinsicElements {
+            card: {
+                children?: any;
+                key?: string | number;
+                title?: string;
+                borderColor?: string;
+                flexGrow?: number;
+                flexShrink?: number;
+                width?: number | string;
+                height?: number | string;
+                padding?: number;
+                margin?: number;
+                border?: string;
+            };
+        }
+    }
+}
 
 type FeedEntry = {
   title: string;
   summary: string;
   link: string;
+  points: string;
+  comments: string;
 };
 
 const FEED_URL = 'https://hnrss.org/frontpage';
@@ -25,7 +68,7 @@ function decodeEntities(value: string): string {
     nbsp: ' ',
   };
 
-  return value.replace(/&(#x?[0-9a-fA-F]+|[a-zA-Z]+);/g, (match, entity: string) => {
+  return value.replace(/&#x?[0-9a-fA-F]+|[a-zA-Z]+;/g, (match, entity: string) => {
     if (entity.startsWith('#x')) {
       const codePoint = Number.parseInt(entity.slice(2), 16);
       return Number.isFinite(codePoint) ? String.fromCodePoint(codePoint) : match;
@@ -79,6 +122,27 @@ function readAtomLink(section: string): string {
   return '';
 }
 
+function extractMeta(description: string): { points: string; comments: string; summary: string } {
+  let points = '';
+  let comments = '';
+  let summary = description;
+
+  const pointsMatch = description.match(/Points:\s*(\d+)/i);
+  if (pointsMatch) points = pointsMatch[1];
+
+  const commentsMatch = description.match(/(?:# )?Comments:\s*(\d+)/i);
+  if (commentsMatch) comments = commentsMatch[1];
+
+  // Strip the metadata lines from the summary
+  summary = summary
+    .replace(/Points:\s*\d+/i, '')
+    .replace(/(?:# )?Comments:\s*\d+/i, '')
+    .replace(/Article URL:.*$/im, '')
+    .trim();
+
+  return { points, comments, summary };
+}
+
 function parseFeed(xml: string): FeedEntry[] {
   const entries: FeedEntry[] = [];
   const seenEntries = new Set<string>();
@@ -86,36 +150,64 @@ function parseFeed(xml: string): FeedEntry[] {
   const rssItems = xml.match(/<item\b[\s\S]*?<\/item>/gi) ?? [];
   for (const item of rssItems) {
     const title = readTag(item, 'title') || 'Untitled item';
-    const summary = readTag(item, 'description')
+    const rawDesc = readTag(item, 'description')
       || readTag(item, 'summary')
       || readTag(item, 'content:encoded')
       || '';
     const link = readTag(item, 'link') || readTag(item, 'guid') || '';
-    const dedupeKey = `${title}|${link}|${summary}`;
+    const dedupeKey = `${title}|${link}`;
     if (seenEntries.has(dedupeKey)) continue;
     seenEntries.add(dedupeKey);
-    entries.push({ title, summary, link });
+
+    const { points, comments, summary } = extractMeta(rawDesc);
+    entries.push({ title, summary, link, points, comments });
   }
 
   const atomEntries = xml.match(/<entry\b[\s\S]*?<\/entry>/gi) ?? [];
   for (const entry of atomEntries) {
     const title = readTag(entry, 'title') || 'Untitled entry';
-    const summary = readTag(entry, 'summary') || readTag(entry, 'content') || '';
+    const rawDesc = readTag(entry, 'summary') || readTag(entry, 'content') || '';
     const link = readAtomLink(entry) || readTag(entry, 'id') || '';
-    const dedupeKey = `${title}|${link}|${summary}`;
+    const dedupeKey = `${title}|${link}`;
     if (seenEntries.has(dedupeKey)) continue;
     seenEntries.add(dedupeKey);
-    entries.push({ title, summary, link });
+
+    const { points, comments, summary } = extractMeta(rawDesc);
+    entries.push({ title, summary, link, points, comments });
   }
 
   return entries;
 }
 
 function formatEntry(entry: FeedEntry): string {
-  const summary = entry.summary.trim() || 'No summary available.';
-  const link = entry.link.trim() || 'No link available.';
+  const divider = caps.unicode ? '═'.repeat(36) : '='.repeat(36);
+  const bullet = caps.unicode ? '▶' : '>';
+  const dot = caps.unicode ? '·' : '-';
 
-  return `Title: ${entry.title}\n\nSummary:\n${summary}\n\nLink: ${link}`;
+  const lines: string[] = [
+    `${bullet} ${entry.title}`,
+    divider,
+    '',
+  ];
+
+  if (entry.points || entry.comments) {
+    const pts = entry.points ? `${dot} Points:    ${entry.points}` : '';
+    const cmt = entry.comments ? `${dot} Comments:  ${entry.comments}` : '';
+    if (pts) lines.push(pts);
+    if (cmt) lines.push(cmt);
+    lines.push('');
+  }
+
+  if (entry.link) {
+    lines.push(`${dot} URL:`);
+    lines.push(`  ${entry.link}`);
+    lines.push('');
+  }
+
+  lines.push(`${dot} Summary:`);
+  lines.push(entry.summary.trim() || 'No summary available.');
+
+  return lines.join('\n');
 }
 
 async function fetchFeedXml(url: string): Promise<string> {
@@ -128,7 +220,7 @@ async function fetchFeedXml(url: string): Promise<string> {
 }
 
 class DetailScrollView extends ScrollView {
-  private readonly detailText = new Text('', {}, { wrap: true });
+  private readonly detailText = new Text('', { fg: { type: 'named', name: 'brightGreen' } }, { wrap: true });
   private content = '';
   private renderedLineCount = 0;
 
@@ -136,8 +228,6 @@ class DetailScrollView extends ScrollView {
     super(
       {
         flexGrow: 1,
-        border: 'single',
-        borderColor: { type: 'named', name: 'brightBlack' },
       },
       { showScrollbar: true },
     );
@@ -146,7 +236,7 @@ class DetailScrollView extends ScrollView {
   }
 
   setEntry(entry: FeedEntry | null): void {
-    const content = entry ? formatEntry(entry) : 'No entry selected.';
+    const content = entry ? formatEntry(entry) : 'Select an article to view details.';
     if (content === this.content) return;
 
     this.content = content;
@@ -173,15 +263,20 @@ class DetailScrollView extends ScrollView {
 
 function LoadingScreen() {
   const center = new Center({ flexGrow: 1 });
-  center.addChild(new Text('Loading RSS feed...', { height: 1, bold: true, fg: { type: 'named', name: 'cyan' } }));
+  const box = new Box({ flexDirection: 'column', gap: 1 });
+  const icon = caps.unicode ? '📡' : '[*]';
+  box.addChild(new Text(`${icon} Loading RSS feed...`, { height: 1, bold: true, fg: { type: 'named', name: 'brightCyan' } }));
+  box.addChild(new Text('Fetching from Hacker News...', { height: 1, fg: { type: 'named', name: 'yellow' } }));
+  center.addChild(box);
   return center;
 }
 
 function ErrorScreen({ message }: { message: string }) {
   const center = new Center({ flexGrow: 1 });
   const box = new Box({ flexDirection: 'column', gap: 1 });
-  box.addChild(new Text(message, { height: 1, bold: true, fg: { type: 'named', name: 'red' } }));
-  box.addChild(new Text('Press r to retry.', { height: 1, fg: { type: 'named', name: 'red' } }));
+  const icon = caps.unicode ? '⚠️' : '[!]';
+  box.addChild(new Text(`${icon} ${message}`, { height: 1, bold: true, fg: { type: 'named', name: 'red' } }));
+  box.addChild(new Text('Press r to retry.', { height: 1, fg: { type: 'named', name: 'yellow' } }));
   center.addChild(box);
   return center;
 }
@@ -194,8 +289,6 @@ function FeedListPane({ items, state }: { items: FeedEntry[]; state: ReturnType<
     { items: mappedItems, state },
     {
       flexGrow: 1,
-      border: 'single',
-      borderColor: { type: 'named', name: 'brightBlack' },
     },
   );
 
@@ -231,6 +324,8 @@ function FeedReaderApp() {
   const [data, setData] = useState<string | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(true);
+  const [searchMode, setSearchMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const detailScrollRef = useRef<DetailScrollView | null>(null);
 
   const feedUrl = refreshToken === 0 ? FEED_URL : `${FEED_URL}?_=${refreshToken}`;
@@ -258,51 +353,76 @@ function FeedReaderApp() {
     };
   }, [feedUrl]);
 
-  const entries = data ? parseFeed(data) : [];
+  const allEntries = data ? parseFeed(data) : [];
+
+  // Filter entries by search query
+  const entries = searchQuery
+    ? allEntries.filter((e) => e.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    : allEntries;
+
   const listItems: ListItem[] = entries.map((entry) => ({ label: entry.title, value: entry.link }));
   listState.setItems(listItems);
 
   const selectedEntry = entries[listState.selectedIndex] ?? null;
-  const title = caps.unicode ? '📰 Hacker News Front Page' : 'Hacker News Front Page';
 
-  useKeymap([
-    { key: 'q', action: () => globalThis.process.exit(0) },
-    {
-      key: 'up',
-      action: () => {
+  // Handle all input through useInput for search mode support
+  useInput((key) => {
+    if (searchMode) {
+      if (key === 'escape') {
+        setSearchMode(false);
+        setSearchQuery('');
+        setRenderTick((v: number) => v + 1);
+      } else if (key === 'backspace') {
+        setSearchQuery((q: string) => q.slice(0, -1));
+        setRenderTick((v: number) => v + 1);
+      } else if (key === 'enter') {
+        setSearchMode(false);
+        setRenderTick((v: number) => v + 1);
+      } else if (key.length === 1 && key >= ' ') {
+        setSearchQuery((q: string) => q + key);
+        setRenderTick((v: number) => v + 1);
+      }
+      return;
+    }
+
+    // Normal mode keybindings
+    switch (key) {
+      case 'q':
+        globalThis.process.exit(0);
+        break;
+      case 'up':
         listState.selectPrev();
-        setRenderTick((value: number) => value + 1);
-      },
-    },
-    {
-      key: 'down',
-      action: () => {
+        setRenderTick((v: number) => v + 1);
+        break;
+      case 'down':
         listState.selectNext();
-        setRenderTick((value: number) => value + 1);
-      },
-    },
-    {
-      key: 'r',
-      action: () => {
-        setRefreshToken((value: number) => value + 1);
-        setRenderTick((value: number) => value + 1);
-      },
-    },
-    {
-      key: 'pageup',
-      action: () => {
+        setRenderTick((v: number) => v + 1);
+        break;
+      case 'r':
+        setRefreshToken((v: number) => v + 1);
+        setRenderTick((v: number) => v + 1);
+        break;
+      case '/':
+        setSearchMode(true);
+        setSearchQuery('');
+        setRenderTick((v: number) => v + 1);
+        break;
+      case 'escape':
+        if (searchQuery) {
+          setSearchQuery('');
+          setRenderTick((v: number) => v + 1);
+        }
+        break;
+      case 'pageup':
         detailScrollRef.current?.scrollBy(-Math.max(1, detailScrollRef.current.rect.height - 1));
-        setRenderTick((value: number) => value + 1);
-      },
-    },
-    {
-      key: 'pagedown',
-      action: () => {
+        setRenderTick((v: number) => v + 1);
+        break;
+      case 'pagedown':
         detailScrollRef.current?.scrollBy(Math.max(1, detailScrollRef.current.rect.height - 1));
-        setRenderTick((value: number) => value + 1);
-      },
-    },
-  ]);
+        setRenderTick((v: number) => v + 1);
+        break;
+    }
+  });
 
   void renderTick;
 
@@ -314,17 +434,46 @@ function FeedReaderApp() {
     return <ErrorScreen message={error.message} />;
   }
 
+  const icon = caps.unicode ? '📰' : '[RSS]';
+  const sep = caps.unicode ? '│' : '|';
+  const articleCount = `${entries.length}${searchQuery ? `/${allEntries.length}` : ''} articles`;
+
+  // Status bar content
+  let statusText: string;
+  if (searchMode) {
+    const cursor = caps.unicode ? '█' : '_';
+    statusText = ` Search: ${searchQuery}${cursor}  (Enter confirm ${sep} Esc cancel)`;
+  } else if (searchQuery) {
+    statusText = ` Filter: "${searchQuery}" ${sep} / search ${sep} Esc clear ${sep} q quit ${sep} r refresh ${sep} ↑↓ nav ${sep} PgUp/Dn scroll`;
+  } else {
+    statusText = ` / search ${sep} q quit ${sep} r refresh ${sep} ↑↓ navigate ${sep} PgUp/PgDn scroll details`;
+  }
+
   return (
-    <box flexDirection="column" flexGrow={1} padding={1} gap={1}>
-      <box flexDirection="row" height={1}>
-        <text bold color="cyan">{title}</text>
+    <box flexDirection="column" flexGrow={1} padding={1}>
+      {/* ── Header ── */}
+      <box flexDirection="row" height={2}>
+        <box flexDirection="column">
+          <text bold color="brightCyan">{`${icon} RSS Reader`}</text>
+          <text color="magenta">Latest Hacker News Articles</text>
+        </box>
         <spacer />
-        <text dim>q quit | r refresh | up/down navigate | pgup/pgdn details</text>
+        <text bold color="brightYellow">{articleCount}</text>
       </box>
 
+      {/* ── Main Content ── */}
       <box flexDirection="row" flexGrow={1} gap={1}>
-        <FeedListPane items={entries} state={listState} />
-        <DetailPane entry={selectedEntry} scrollRef={detailScrollRef} />
+        <card title=" Articles " borderColor="magenta" flexGrow={1}>
+          <FeedListPane items={entries} state={listState} />
+        </card>
+        <card title=" Details " borderColor="green" flexGrow={1}>
+          <DetailPane entry={selectedEntry} scrollRef={detailScrollRef} />
+        </card>
+      </box>
+
+      {/* ── Status Bar ── */}
+      <box flexDirection="row" height={1}>
+        <text color={searchMode ? 'brightYellow' : 'cyan'} bold={searchMode}>{statusText}</text>
       </box>
     </box>
   );
