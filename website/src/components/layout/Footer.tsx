@@ -48,6 +48,8 @@ export function Footer() {
                             <li><Link href="/docs/core/overview">API Reference</Link></li>
                             <li><Link href="/docs/guides/first-app">Guides</Link></li>
                             <li><Link href="/docs/getting-started/architecture">Architecture</Link></li>
+                            <li><Link href="/compare/ink">TermUI vs Ink</Link></li>
+                            <li><Link href="/compare/tui-frameworks">Compare frameworks</Link></li>
                         </ul>
                     </div>
 

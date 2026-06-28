@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const staticPages: MetadataRoute.Sitemap = [
         { url: `${SITE_URL}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
         { url: `${SITE_URL}/components`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${SITE_URL}/compare/ink`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+        { url: `${SITE_URL}/compare/tui-frameworks`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     ]
 
     const componentPages: MetadataRoute.Sitemap = registry.map((c) => ({

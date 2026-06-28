@@ -1,0 +1,167 @@
+/* Comparison pages (/compare/*). Dark terminal brand, green accent. */
+
+.cmp-page {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: var(--space-8, 4rem) var(--space-5, 1.5rem) var(--space-8, 4rem);
+}
+
+.cmp-eyebrow {
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: var(--space-3);
+}
+
+.cmp-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-4);
+}
+.cmp-title em {
+    font-style: normal;
+    color: var(--accent);
+}
+
+.cmp-lead {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 70ch;
+    margin: 0 0 var(--space-6);
+}
+
+.cmp-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+}
+.cmp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    font-family: var(--font-code);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.cmp-btn:active { transform: translateY(1px); }
+.cmp-btn--primary {
+    background: var(--accent);
+    color: var(--bg-primary, #000);
+    font-weight: 600;
+}
+.cmp-btn--primary:hover { background: var(--accent-dim, #00cc6a); }
+.cmp-btn--ghost {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-medium, rgba(60, 60, 96, 0.35));
+}
+.cmp-btn--ghost:hover { border-color: var(--border-accent, rgba(0, 255, 136, 0.4)); color: var(--accent); }
+
+/* Section */
+.cmp-section { margin-top: var(--space-8); }
+.cmp-h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-4);
+}
+
+/* Table */
+.cmp-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--bg-secondary);
+}
+.cmp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+.cmp-table th,
+.cmp-table td {
+    padding: 0.85rem 1.1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-subtle);
+    white-space: nowrap;
+}
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+.cmp-th-feature,
+.cmp-td-feature {
+    font-family: var(--font-code);
+    color: var(--text-muted);
+    position: sticky;
+    left: 0;
+    background: var(--bg-tertiary);
+}
+.cmp-th {
+    font-family: var(--font-display);
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+.cmp-th--termui {
+    color: var(--accent);
+    background: var(--accent-glow, rgba(0, 255, 136, 0.12));
+    border-bottom: 2px solid var(--accent);
+}
+.cmp-td { color: var(--text-secondary); }
+.cmp-td--termui {
+    color: var(--text-primary);
+    background: rgba(0, 255, 136, 0.05);
+    font-weight: 500;
+}
+
+/* Key-points grid */
+.cmp-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+.cmp-point {
+    padding: var(--space-5);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--bg-secondary);
+}
+.cmp-point h3 {
+    font-family: var(--font-code);
+    font-size: var(--text-base);
+    color: var(--accent);
+    margin: 0 0 var(--space-2);
+}
+.cmp-point p { color: var(--text-secondary); line-height: 1.6; margin: 0; font-size: var(--text-sm); }
+
+/* FAQ */
+.cmp-faq { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-4); }
+.cmp-faq-item {
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    padding: var(--space-5);
+}
+.cmp-faq-item dt {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+.cmp-faq-item dd { margin: 0; color: var(--text-secondary); line-height: 1.6; font-size: var(--text-sm); }
+
+.cmp-note {
+    margin-top: var(--space-6);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}

@@ -25,6 +25,30 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Is there a React alternative for terminal UIs in TypeScript?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. TermUI ships its own JSX runtime, so you write JSX and React-style hooks without a React dependency. Ink is the React-based option; TermUI is the no-React option.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between TermUI and Ink?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ink depends on React and Yoga to render React components to the terminal. TermUI ships its own JSX runtime, flexbox layout engine, TSS theming, a router, and a store, with no React dependency and no C extensions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is TermUI different from Textual or Bubble Tea?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Textual targets Python and Bubble Tea targets Go. TermUI is the TypeScript-native option with a React-like JSX model, 230 components, and a built-in router, store, and theming system.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'How do I install TermUI?',
       acceptedAnswer: {
         '@type': 'Answer',
