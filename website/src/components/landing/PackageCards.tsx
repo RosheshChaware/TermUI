@@ -47,7 +47,7 @@ function PackageCard({ pkg, index }: { pkg: PackageInfo; index: number }) {
 
 export function PackageCards() {
     const categories = ['core', 'components', 'features', 'dx'] as const
-    const counter = useCounter(13, 1800)
+    const counter = useCounter(15, 1800)
 
     return (
         <section className="packages section">

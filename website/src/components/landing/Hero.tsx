@@ -181,7 +181,7 @@ export function Hero() {
     // Scramble decode for "magic" — starts after its charReveal animation completes
     const magicText = useScramble('magic', 1200)
 
-    const packages = useCounter(13, 1800)
+    const packages = useCounter(15, 1800)
     const tests = useCounter(356, 2200)
 
     // Global mouse tracking → 3D tilt on terminal (direct DOM, no React re-render)
@@ -235,7 +235,7 @@ export function Hero() {
                 <div className="hero-text">
                     <div className="hero-badge">
                         <span className="hero-badge-dot" />
-                        <span>v1.0 · TypeScript</span>
+                        <span>v0.1.6 · TypeScript</span>
                     </div>
 
                     {/* Editorial stacked headline — each line deliberately sized */}
@@ -273,7 +273,7 @@ export function Hero() {
                     </h1>
 
                     <p className="hero-tagline">
-                        A TypeScript framework with 16+ components, theming,
+                        A TypeScript framework with 230 components, theming,
                         routing, and spring animations. Built for terminal apps
                         you ship to production.
                     </p>
@@ -400,7 +400,7 @@ export function Hero() {
                 <span className="hero-status-sep" aria-hidden="true">│</span>
                 <div className="hero-status-item">
                     <span className="hero-status-indicator" />
-                    <span className="hero-status-value">16+</span>
+                    <span className="hero-status-value">230</span>
                     <span className="hero-status-label">Components</span>
                 </div>
                 <span className="hero-status-sep" aria-hidden="true">│</span>

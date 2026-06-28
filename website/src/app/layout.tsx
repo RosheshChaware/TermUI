@@ -10,7 +10,7 @@ const SITE_URL = 'https://termui.io'
 const SITE_NAME = 'TermUI'
 const SITE_TITLE = 'TermUI | Terminal UI Framework for TypeScript'
 const SITE_DESCRIPTION =
-  'TermUI is a TypeScript framework for building terminal user interfaces. It includes 16+ components, JSX support, React-style hooks, theming, routing, and spring animations. Pure TypeScript, no C extensions.'
+  'TermUI is a TypeScript framework for building terminal user interfaces. It includes 230 components, JSX support, React-style hooks, theming, routing, and spring animations. Pure TypeScript, no C extensions.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -61,10 +61,10 @@ const structuredData = {
       programmingLanguage: 'TypeScript',
       url: SITE_URL,
       downloadUrl: 'https://www.npmjs.com/package/@termuijs/core',
-      softwareVersion: '1.0',
+      softwareVersion: '0.1.6',
       license: 'https://opensource.org/licenses/MIT',
       description:
-        'TermUI is a TypeScript framework for building terminal user interfaces with 16+ components, JSX support, hooks, theming, routing, and animations.',
+        'TermUI is a TypeScript framework for building terminal user interfaces with 230 components, JSX support, hooks, theming, routing, and animations.',
       author: {
         '@type': 'Organization',
         '@id': `${SITE_URL}/#organization`,

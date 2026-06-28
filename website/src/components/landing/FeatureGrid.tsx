@@ -106,7 +106,7 @@ function TSSCard() {
     )
 }
 
-// Card 4 — 16+ Components (bottom-center)
+// Card 4 — 230 Components (bottom-center)
 const componentNames = [
     'Box', 'Text', 'Table', 'Spinner', 'Select',
     'Tabs', 'Modal', 'Tree', 'Toast', 'Form',
@@ -122,7 +122,7 @@ function ComponentsCard() {
 
     return (
         <div ref={ref} className="bento-card bento-card--components glow-card" onMouseMove={onMouseMove}>
-            <div className="bento-card-label">16+ Components</div>
+            <div className="bento-card-label">230 Components</div>
             <div className="bento-marquee-wrap">
                 <div className="bento-marquee-col bento-marquee-col--up">
                     <div className="bento-marquee-inner">
@@ -139,7 +139,7 @@ function ComponentsCard() {
                     </div>
                 </div>
             </div>
-            <p className="bento-card-desc">Box, Text, Table, Spinner, Select, Tabs, Modal, Tree, Toast, Form, and more. Ready to use.</p>
+            <p className="bento-card-desc">Box, Text, Table, Spinner, Select, Tabs, Modal, Tree, Toast, Form, and more.</p>
         </div>
     )
 }

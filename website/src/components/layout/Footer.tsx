@@ -28,7 +28,7 @@ export function Footer() {
                                 terminal user interfaces.
                             </p>
                             <div className="footer-brand-meta">
-                                <span className="footer-meta-tag">v1.0</span>
+                                <span className="footer-meta-tag">v0.1.6</span>
                                 <span className="footer-meta-sep">·</span>
                                 <span className="footer-meta-tag">MIT</span>
                                 <span className="footer-meta-sep">·</span>
@@ -88,7 +88,7 @@ export function Footer() {
                         MIT License
                     </span>
                     <span className="footer-built">
-                        Built with <span className="footer-built-accent">TanStack Start</span>
+                        Built with <span className="footer-built-accent">Next.js</span>
                     </span>
                 </div>
             </div>

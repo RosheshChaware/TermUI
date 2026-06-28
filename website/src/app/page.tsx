@@ -44,7 +44,7 @@ const faqSchema = {
       name: 'How many components does TermUI include?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'TermUI ships with 80+ components across two packages: @termuijs/widgets (Box, Text, Table, ProgressBar, Spinner, Gauge, VirtualList, DataGrid, Calendar, Markdown, and more) and @termuijs/ui (Select, Tabs, Modal, Toast, Tree, MultiSelect, CommandPalette, Drawer, Wizard, RadioGroup, and more).',
+        text: 'TermUI ships 230 components. Most live in @termuijs/widgets (Box, Text, Table, ProgressBar, Spinner, Gauge, VirtualList, DataGrid, Calendar, Markdown, and more) and @termuijs/ui (Select, Tabs, Modal, Toast, Tree, MultiSelect, CommandPalette, Drawer, Wizard, RadioGroup, and more).',
       },
     },
     {
@@ -60,7 +60,7 @@ const faqSchema = {
       name: 'What is the difference between TermUI and Ink?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'TermUI and Ink both target terminal UIs with JSX. TermUI adds a full layout engine, Terminal Style Sheets (TSS) for CSS-like theming, a built-in router, spring animations, a Zustand-like global store, and a hot-reload dev server. It ships as 13 independent packages so you only install what you need.',
+        text: 'TermUI and Ink both target terminal UIs with JSX. TermUI adds a full layout engine, Terminal Style Sheets (TSS) for CSS-like theming, a built-in router, spring animations, a Zustand-like global store, and a hot-reload dev server. It ships as 15 independent packages so you only install what you need.',
       },
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       name: 'What is the best TypeScript terminal app framework?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'TermUI is a TypeScript-first terminal UI framework with 15 packages covering components, JSX, theming (TSS), routing, spring animations, global state, hot reload, testing, adapters, and charts. Ink is the main alternative; it reuses React but has no built-in router, animations, or hot reload.',
+        text: 'TermUI is a TypeScript-first terminal UI framework with 15 packages covering components, JSX, theming (TSS), routing, spring animations, global state, hot reload, testing, and adapters. Ink is the main alternative; it reuses React but has no built-in router, animations, or hot reload.',
       },
     },
   ],

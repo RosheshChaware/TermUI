@@ -17,6 +17,7 @@ const DOCS: Record<string, () => Promise<MDXModule>> = {
   'core/screen':                    () => import('../../content/docs/core/screen.mdx'),
   'core/style':                     () => import('../../content/docs/core/style.mdx'),
   'core/unicode':                   () => import('../../content/docs/core/unicode.mdx'),
+  'cli/overview':                   () => import('../../content/docs/cli/overview.mdx'),
   'create-termui-app/overview':     () => import('../../content/docs/create-termui-app/overview.mdx'),
   'getting-started/architecture':   () => import('../../content/docs/getting-started/architecture.mdx'),
   'getting-started/installation':   () => import('../../content/docs/getting-started/installation.mdx'),

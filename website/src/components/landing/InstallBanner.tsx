@@ -44,7 +44,7 @@ export function InstallBanner() {
                     <span style={{ color: 'var(--accent)' }}>start building</span>
                 </h2>
                 <p className="install-main-desc">
-                    Scaffold a full TermUI project in seconds. Then watch it run.
+                    Scaffold a TermUI project with one command, then run it.
                 </p>
             </div>
 

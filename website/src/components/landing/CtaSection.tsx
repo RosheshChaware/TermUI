@@ -74,12 +74,12 @@ export function CtaSection() {
                 {/* Stats row */}
                 <div className="cta-stats">
                     <div className="cta-stat">
-                        <span className="cta-stat-value">13</span>
+                        <span className="cta-stat-value">15</span>
                         <span className="cta-stat-label">packages</span>
                     </div>
                     <span className="cta-stat-sep" aria-hidden="true">·</span>
                     <div className="cta-stat">
-                        <span className="cta-stat-value">80+</span>
+                        <span className="cta-stat-value">230</span>
                         <span className="cta-stat-label">components</span>
                     </div>
                     <span className="cta-stat-sep" aria-hidden="true">·</span>

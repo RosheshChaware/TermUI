@@ -81,6 +81,14 @@ export const packages: PackageInfo[] = [
         category: 'features',
     },
     {
+        name: '@termuijs/adapters',
+        slug: 'adapters',
+        section: 'adapters',
+        description: 'Bridges to AI providers, git, execa, and other CLI tools.',
+        icon: '🔌',
+        category: 'features',
+    },
+    {
         name: '@termuijs/testing',
         slug: 'testing',
         section: 'testing',
@@ -110,6 +118,14 @@ export const packages: PackageInfo[] = [
         section: 'create-termui-app',
         description: 'CLI scaffolding tool. One command to start building.',
         icon: '📦',
+        category: 'dx',
+    },
+    {
+        name: '@termuijs/cli',
+        slug: 'cli',
+        section: 'cli',
+        description: 'Add components to your project with npx termuijs add.',
+        icon: '⌘',
         category: 'dx',
     },
 ]
